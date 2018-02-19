@@ -1,0 +1,17 @@
+---
+title: Test R markdown function
+author: Jiaming
+date: '2018-02-19'
+slug: test-r-markdown-function
+categories:
+  - R
+tags:
+  - Test
+  - Mark
+  - regression
+  - R Markdown
+---
+This is the first page by r markdown, and it is only a simple markdown now.
+```r
+1 + 1  # not executed
+```
