@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Regression on A Hugo website</title>
-    <link>/tags/regression/</link>
-    <description>Recent content in Regression on A Hugo website</description>
+    <title>Nonparametric on A Hugo website</title>
+    <link>/tags/nonparametric/</link>
+    <description>Recent content in Nonparametric on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/regression/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/nonparametric/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,16 +19,6 @@
       <guid>/2018/02/19/nonparametric-regression/</guid>
       <description>Here is the a new note about the non-parametric regression.
 Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve ‘\(g\)’ is. An intuitively way is ‘\(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\)’,the integrated squared second derivative.</description>
-    </item>
-    
-    <item>
-      <title>Test R markdown function</title>
-      <link>/2018/02/19/test-r-markdown-function/</link>
-      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/02/19/test-r-markdown-function/</guid>
-      <description>This is the first page by r markdown, and it is only a simple markdown now.
-1 + 1 # not executed </description>
     </item>
     
   </channel>

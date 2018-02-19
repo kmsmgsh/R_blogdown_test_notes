@@ -1,0 +1,16 @@
+---
+title: Nonparametric regression
+author: Jiaming Shen
+date: '2018-02-19'
+slug: nonparametric-regression
+categories:
+  - Statistics
+tags:
+  - regression
+  - nonparametric
+  - smoothin
+---
+
+Here is the a new note about the non-parametric regression.
+
+Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how 'rough' or 'wiggly' the curve '$g$' is. An intuitively way is '$\int _a ^b \{g''(t)\}^2dt$',the integrated squared second derivative.
