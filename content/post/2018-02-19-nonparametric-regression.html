@@ -17,5 +17,49 @@ tags:
 <p>Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve <span class="math inline">\(g\)</span> is. An intuitively way is <span class="math inline">\(\int _a ^b \{g&#39;&#39;(t)\}^2dt\)</span>,the integrated squared second derivative.</p>
 <p>The general form of penalized least squares regression
 <span class="math display">\[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&#39;&#39;(x)^2\}dx\]</span>
-So the fit is not only concern about the goodness of fit(1-NN is the best among the data set), but also consider about the roughness.
-<span class="math inline">\(\alpha\)</span> is the ‘rate of exchange’, or the weight of penalty.</p>
+So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.
+<span class="math inline">\(\alpha\)</span> is ‘rate of exchange’, or weight of penalty. Minimizing <span class="math inline">\(S(g)\)</span> is the best compromise between smoothness and goodness-of-fit for a given <span class="math inline">\(\alpha\)</span>.
+<span class="math inline">\(\alpha\)</span> is large-&gt;more weighted on smoothness,<span class="math inline">\(\hat g\)</span> would be curvature. <span class="math inline">\(\alpha\)</span> -&gt; 0, the <span class="math inline">\(\alpha\)</span> is relative small,then the square sum would be the main contribution to <span class="math inline">\(S(g)\)</span>, <span class="math inline">\(\hat g\)</span> will approach the interpolating curve.</p>
+<p>Semiparametric model
+<span class="math display">\[
+Y=g(t)+x^T\beta+error
+\]</span></p>
+<hr />
+<p>Following is review and notes for Green and B.W. Silverman(1994),Nonparametric Regression and Generalized Linear Models: A roughness penalty approach. The paragraph upon actually from the chap1 but only some main ideas.</p>
+<div id="chapter-2.-interpolating-smoothing-splines." class="section level3">
+<h3>Chapter 2. Interpolating &amp; smoothing splines.</h3>
+<p>Main goal: How to find a curve g to minimize <span class="math inline">\(S(g)\)</span>.</p>
+<p>A pivotal role: cubic splines.</p>
+<p>Some basic notations:</p>
+<p><span class="math inline">\(t_1,...t_n\)</span> is knots in <span class="math inline">\([a,b]\)</span> with <span class="math inline">\(a&lt;t_1&lt;...&lt;t_n&lt;b\)</span>.</p>
+<p>The cubic spline g is</p>
+<ul>
+<li>cubic polynomial in <span class="math inline">\((a,t_1),(t_1,t_2),....,(t_n.b)\)</span></li>
+<li>The polynomial pieces fit together at the points <span class="math inline">\(t_i\)</span>. (<span class="math inline">\(g,g&#39;,g&#39;&#39;\)</span> agrees at <span class="math inline">\(t_i\)</span>).</li>
+</ul>
+<p>There are many equivalent ways of specifying a cubic spline. One is
+<span class="math display">\[
+g(t)=d_i(t-t_i)^3+c_i(t-t_i)^2+b_i(t-t_i)+a_i,\ for\ t_i\leq t \leq t_{i+1}
+\]</span>
+for given constant <span class="math inline">\(a_i,b_i,c_i,d_i,i=0,...,n\)</span>,define $t_0=a,t_{i+1}=b $;
+This is the intuitive about the “piecewise cubic polynomial”.</p>
+<p>Definition: Natural cubic spline(NCS):</p>
+<ul>
+<li>Its second and third derivatives are zero at a and b.</li>
+</ul>
+<p>This condition called natural boundary conditions.</p>
+<p>Imply <span class="math inline">\(d_0=c_0=d_n=c_n=0\)</span>-&gt; g is linear on <span class="math inline">\([a,t_1],[t_n,b]\)</span>.</p>
+<blockquote>
+<p>Comment:</p>
+<p>It contains 4(n+2) parameters. As the cubic spline definition, the “<span class="math inline">\(g,g&#39;,g&#39;&#39;\)</span> agrees at <span class="math inline">\(t_i\)</span>.”,will have 3*n constrains.
+the nature spline will add 4 constrains.For interpolating problem, interpolate means <span class="math inline">\(g(t_i)=z_i\)</span> than another n+2 constrains.
+Then totally it is 4n+6 constrains, why nature interpolating cubic spline is unique?
+Deep thinking: g agrees at <span class="math inline">\(t_i\)</span> is the same as <span class="math inline">\(g(t_i)=z_i\)</span> condition? than there are less constrains. Is the choosing knots the same as interpolating the known knots? (It should be same I think.)</p>
+</blockquote>
+<div id="the-value-second-derivative-representation" class="section level5">
+<h5>2.2.1 The value-second derivative representation</h5>
+</div>
+<div id="interpolating-spline" class="section level5">
+<h5>2.2 Interpolating spline</h5>
+</div>
+</div>

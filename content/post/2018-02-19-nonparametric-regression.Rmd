@@ -17,6 +17,67 @@ Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify 
 
 The general form of penalized least squares regression
 $$S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g''(x)^2\}dx$$
-So the fit is not only concern about the goodness of fit(1-NN is the best among the data set), but also consider about the roughness.
-$\alpha$ is the 'rate of exchange', or the weight of penalty.
+So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.
+$\alpha$ is 'rate of exchange', or weight of penalty. Minimizing $S(g)$ is the best compromise between smoothness and goodness-of-fit for a given $\alpha$.
+$\alpha$ is large->more weighted on smoothness,$\hat g$ would be  curvature. $\alpha$ -> 0, the $\alpha$ is relative small,then the square sum would be the main contribution to $S(g)$, $\hat g$ will approach the interpolating curve.
+
+
+
+Semiparametric model
+$$
+Y=g(t)+x^T\beta+error
+$$
+
+***
+
+Following is review and notes for Green and B.W. Silverman(1994),Nonparametric Regression and Generalized Linear Models: A roughness penalty approach. The paragraph upon actually from the chap1 but only some main ideas.
+
+### Chapter 2. Interpolating & smoothing splines.
+
+Main goal: How to find a curve g to minimize $S(g)$.
+
+A pivotal role: cubic splines.
+
+Some basic notations:
+
+$t_1,...t_n$ is knots in $[a,b]$ with $a<t_1<...<t_n<b$.
+
+The cubic spline g is
+
+- cubic polynomial in $(a,t_1),(t_1,t_2),....,(t_n.b)$
+- The polynomial pieces fit together at the points $t_i$. ($g,g',g''$ agrees at $t_i$).
+
+There are many equivalent ways of specifying a cubic spline. One is
+$$
+g(t)=d_i(t-t_i)^3+c_i(t-t_i)^2+b_i(t-t_i)+a_i,\ for\ t_i\leq t \leq t_{i+1}
+$$
+for given constant $a_i,b_i,c_i,d_i,i=0,...,n$,define $t_0=a,t_{i+1}=b $;
+This is the intuitive about the "piecewise cubic polynomial". 
+
+Definition: Natural cubic spline(NCS):
+
+-  Its second and third derivatives are zero at a and b.
+
+This condition called natural boundary conditions.
+
+Imply $d_0=c_0=d_n=c_n=0$-> g is linear on $[a,t_1],[t_n,b]$.
+
+> Comment:
+>
+It contains 4(n+2) parameters. As the cubic spline definition, the "$g,g',g''$ agrees at $t_i$.",will have 3*n constrains. 
+the nature spline will add 4 constrains.For interpolating problem, interpolate means $g(t_i)=z_i$ than another n+2 constrains. 
+Then totally it is 4n+6 constrains, why nature interpolating cubic spline is unique? 
+Deep thinking: g agrees at $t_i$ is the same as $g(t_i)=z_i$ condition? than there are less constrains. Is the choosing knots the same as interpolating the known knots? (It should be same I think.)
+
+##### 2.2.1 The value-second derivative representation
+
+
+
+##### 2.2 Interpolating spline
+
+
+
+
+
+
 
