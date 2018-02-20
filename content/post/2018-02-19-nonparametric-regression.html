@@ -15,3 +15,7 @@ tags:
 
 <p>Here is the a new note about the non-parametric regression.</p>
 <p>Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve <span class="math inline">\(g\)</span> is. An intuitively way is <span class="math inline">\(\int _a ^b \{g&#39;&#39;(t)\}^2dt\)</span>,the integrated squared second derivative.</p>
+<p>The general form of penalized least squares regression
+<span class="math display">\[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&#39;&#39;(x)^2\}dx\]</span>
+So the fit is not only concern about the goodness of fit(1-NN is the best among the data set), but also consider about the roughness.
+<span class="math inline">\(\alpha\)</span> is the ‘rate of exchange’, or the weight of penalty.</p>
