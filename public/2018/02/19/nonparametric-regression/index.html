@@ -54,7 +54,7 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">6 min read</span>
     
 
     <h1 class="article-title">Nonparametric regression</h1>
@@ -101,17 +101,133 @@ This is the intuitive about the “piecewise cubic polynomial”.</p>
 <p>This condition called natural boundary conditions.</p>
 <p>Imply <span class="math inline">\(d_0=c_0=d_n=c_n=0\)</span>-&gt; g is linear on <span class="math inline">\([a,t_1],[t_n,b]\)</span>.</p>
 <blockquote>
-<p>Comment:</p>
-<p>It contains 4(n+2) parameters. As the cubic spline definition, the “<span class="math inline">\(g,g&#39;,g&#39;&#39;\)</span> agrees at <span class="math inline">\(t_i\)</span>.”,will have 3*n constrains.
-the nature spline will add 4 constrains.For interpolating problem, interpolate means <span class="math inline">\(g(t_i)=z_i\)</span> than another n+2 constrains.
-Then totally it is 4n+6 constrains, why nature interpolating cubic spline is unique?
-Deep thinking: g agrees at <span class="math inline">\(t_i\)</span> is the same as <span class="math inline">\(g(t_i)=z_i\)</span> condition? than there are less constrains. Is the choosing knots the same as interpolating the known knots? (It should be same I think.)</p>
+<p><del>Comment</del>:(Failed)</p>
+<ul>
+<li><p><del>It contains 4(n+2) parameters. As the cubic spline definition, the “<span class="math inline">\(g,g&#39;,g&#39;&#39;\)</span> agrees at <span class="math inline">\(t_i\)</span>.”,will have 3(n+1) constrains.The nature spline will add 4 constrains. For interpolating problem, interpolate means <span class="math inline">\(g(t_i)=z_i\)</span> than another n+2 constrains.Then totally it is 4n+9 constrains. Is the solution always exist?</del>
+Maybe I should find the answer from Tibshirani and Hastie(2004), because the way I thought is from it.</p></li>
+<li><p><del>Deep thinking: g agrees at <span class="math inline">\(t_i\)</span> is the same as <span class="math inline">\(g(t_i)=z_i\)</span> condition? than there are less n constrains.It is only 3n+8 constrains.</del></p></li>
+<li><p>Is the choosing knots the same as interpolating the known knots? (It should be same I think.)</p></li>
+</ul>
 </blockquote>
+<hr />
 <div id="the-value-second-derivative-representation" class="section level5">
 <h5>2.2.1 The value-second derivative representation</h5>
+<p>This is another way to representation NCS, by its value and its second derivative at each knots.</p>
+<p>Notation:</p>
+<p><span class="math display">\[
+g_i=g(t_i)\ and\ \gamma_i=g&#39;&#39;(t_i)\ for\ i=1,...,n
+\]</span>
+<span class="math inline">\(\mathbf{g}=(g_1,...,g_n)^T,\mathbf{\gamma}=(\gamma_1,...,\gamma_n)^T\)</span>. Author assert <span class="math inline">\(\mathbf{g},\mathbf{\gamma}\)</span> specify the g completely.</p>
+<blockquote>
+<p>comment:(Failed)</p>
+<ul>
+<li><p>As the comment before, if it only contains 3n+6 constrains, then give extra information in <span class="math inline">\(g&#39;&#39;\)</span>, it would have extra n constrains,than totally 4n+8 constrains. Than if it has solution, it should be unique.</p></li>
+<li><p>Back to begging for count: n+2 constrains for value <span class="math inline">\(z_i\)</span>,4 nature boundary conditions,n constrains for <span class="math inline">\(g&#39;&#39;\)</span>,n constrains for agree <span class="math inline">\(g\)</span>, not meet the 4n+8 parameters.</p></li>
+<li><p>Think in a nother way, the linear system. We have n+2 cubic polynomials, each polynomials have 4 parameters. Two value of polynomials, the tail and the head: two constrains. The tail and head 2-derivatives: two constrains. Tail and head 1-derivatives: agree or 0: another 2 constrains. Then there are 6 constrains for 4 parameters.Ofc some a degenerate, but how to count in this way? Refer to ESL again.</p></li>
+</ul>
+</blockquote>
+<p>The neccesaary and sufficient condition for the vectors genuinely to represent a natural cubic spline on the given knot sequence.</p>
+<p>Definition:</p>
+<p><span class="math inline">\(h_i=t_{i+1}-t_i\)</span>, Q is <span class="math inline">\(n\times (n-2)\)</span> band matrices with entries as
+<span class="math display">\[
+q_{j-1,j}=h^{-1}_{j-1},q_{jj}=-h^{-1}_{j-1}-h^{-1}_{j}, q_{j+1}=h^{-1}_j
+\]</span>
+others are zero, <span class="math inline">\(q_{ij}=0,if\ |i-j|\geq2\)</span>,<span class="math inline">\(i=1,...,n.j=2,...,n-1\)</span>.
+Band matrices R is <span class="math inline">\((n-2)\times(n-2)\)</span>,given by
+<span class="math display">\[
+r_ii=\frac{1}{3} (h_{i-1}+h_i)\\
+r_{i,i+1}=r_{i+1,i}=\frac{1}{6}h_i.
+\]</span>
+<span class="math inline">\(i=2,...,n-1\)</span>,$r_{ij}=0 for |i-j|2. $</p>
+<p>Property: R is strictly diagonal dominant: <span class="math inline">\(|r_{ii}|&gt;\sum_{i\neq j}|r_{ij}|\)</span>. R is strictly positive-definite.
+btw: Q is three-wide
+Define:
+<span class="math display">\[K=QR^{-1}Q^T\]</span>
+Then we have the theorem:</p>
+<p>Theorem:</p>
+<p><span class="math inline">\(\mathbf{g}\)</span> and <span class="math inline">\(\mathbf{\gamma}\)</span> specify a natural cubic spline iff <span class="math inline">\(Q^T\mathbf{g}=R\gamma\)</span>.
+Then the roughness penalty will satisfy <span class="math inline">\(\int ^b_a g&#39;&#39;(t)dt=\gamma^TR\gamma=\mathbf{g}^TK\mathbf{g}\)</span></p>
 </div>
 <div id="interpolating-spline" class="section level5">
 <h5>2.2 Interpolating spline</h5>
+<p>Goal: Main part in smoothing, but interpolating can simplify and clarify subsequent discussion of the smoothing problem.</p>
+<p>Interpolating :<span class="math inline">\(z_1,...,z_2 \rightarrow t_1,...t_n\)</span>. We have <span class="math inline">\(g(t_i)=z_i\)</span>.</p>
+<p>Approach:</p>
+<ul>
+<li>Just straight line.</li>
+<li>Smoothing curve.</li>
+</ul>
+<p>Of course the straight line if not fit what we want, we than discussing about the smoothing curve.</p>
+<p>Then the workflow in below is</p>
+<ol style="list-style-type: decimal">
+<li>Define the “Smooth”</li>
+<li>Goal: Smoothest</li>
+<li>NCS is smoothest.</li>
+</ol>
+<p>Why do this:</p>
+<p>The smoothing curve for interpolating is not unique, in this way, we want to find the best one among all the potential curves.
+If we want the best one, we need define what the meaning of best, then we need define “Smooth”.</p>
+<p>First, we define the working space as all the function with two continuous derivatives in domain <span class="math inline">\([a,b]\)</span>, called <span class="math inline">\(S[a,b]\)</span>. Then we need to find which one is best in <span class="math inline">\(S[a,b]\)</span>.
+Back to the beginning of this document, the intuitively definition of smoothness is <span class="math inline">\(\int _a ^b g&#39;&#39;\)</span>.</p>
+<p>A result showed that natural cubic spline interpolating minimums the <span class="math inline">\(\int _a ^b g&#39;&#39;\)</span>.</p>
+<p>The next questions is</p>
+<ul>
+<li>why NCS is smoothest?</li>
+<li>Is the NCS interpolating unique?</li>
+<li>How to calculate?</li>
+</ul>
+<p>Let’s ask the second question first.</p>
+<p>Theorem:</p>
+<p>Suppose <span class="math inline">\(n\geq 2\)</span> and that <span class="math inline">\(t_1&lt;...&lt;t_n\)</span> with given <span class="math inline">\(z_1,...,z_n\)</span>, there is a unique natural cubic spine <span class="math inline">\(g\)</span> with knots at the point <span class="math inline">\(t_i\)</span> satisfying <span class="math inline">\(g(t_i)=z_i\)</span> for <span class="math inline">\(i=1,...,n\)</span>.</p>
+<p>proof:</p>
+<p>By theorem before, the sufficient and neccessary condition for <span class="math inline">\(\mathbf{g},\gamma\)</span> specify a NCS. Then the condition specify <span class="math inline">\(\mathbf{g}\)</span>, the free parameter is <span class="math inline">\(\gamma\)</span>, so if there exist a unique <span class="math inline">\(\gamma\)</span> to meet the condition, then proofed.
+Since <span class="math inline">\(\mathbf{R}\)</span> is strictly positive-definite, there will be aunique <span class="math inline">\(\gamma=R^{-1}Q^T\mathbf{g}\)</span>.QED.</p>
+<p>The key thing is the previous theorem, but idk yet how to prove that.</p>
+<p>Computation discussion:</p>
+<p>As the R is band matrix with width of band is 2,a triagonal matrix, we do not need to calculate the <span class="math inline">\(R^{-1}\)</span>, there is a fast and iteravie algorithm to get the answer with O(n). There are also special structure for Q, we also do not need to calculate <span class="math inline">\(Q^T\mathbf{g}\)</span> in the matrix manipulate way, we have
+<span class="math display">\[
+(Q^T\mathbf{g})_i=\frac{g_{i+1}-g_{i}}{h_i}-\frac{g_i-g_{i-1}}{h_{i-1}}
+\]</span>
+which is also O(n).</p>
+<p>Algorithm:</p>
+<ul>
+<li><strong>STEP 1</strong> Set <span class="math inline">\(g_i=z_i\)</span> for i=1,…,n.</li>
+<li><strong>STEP 2</strong> Set <span class="math inline">\(\mathbf{x}=Q^T\mathbf{g}\)</span> and solve <span class="math inline">\(R\gamma=\mathbf{x}\)</span> for <span class="math inline">\(\gamma\)</span>.</li>
+</ul>
+</div>
+<div id="optimality-properties-of-the-natural-cubic-spline-interpolant" class="section level5">
+<h5>2.2.2 Optimality properties of the natural cubic spline interpolant</h5>
+<p>This section solves the question 1, Why NCS is smoothest.</p>
+<p>Author make a obscure definition to make the completeness in mathematical. Remind the space <span class="math inline">\(S[a,b]\)</span> we defined before, now we turn to a new definition <span class="math inline">\(S_2[a,b]\)</span>.
+It is the space of functions that are 1. differnetiable on [a,b] 2. “have absolutely continuous first derivative. That is, g is continuous and differentiable everywhere on [a,b] with derivative g’, and there is an integrable function <span class="math inline">\(g&#39;&#39;\)</span> such that <span class="math inline">\(\int _a ^xg&#39;&#39;(t)dt=g&#39;(x)-g&#39;(a)\)</span> for all x in [a,b]”.(Full quote P16 paragraph 3).</p>
+<p><span class="math inline">\(S_2[a,b]\)</span> contains <span class="math inline">\(S[a,b]\)</span>, then g is smoothest in <span class="math inline">\(S_2[a,b]\)</span>.</p>
+<p>Theorem 2.3</p>
+<p><span class="math inline">\(\widetilde g \in S_2[a,b]\)</span> is an intepolating for <span class="math inline">\((t_i,z_i)\)</span>. g is NCS.
+Then <span class="math inline">\(\int \widetilde g&#39;&#39;^2 \geq g&#39;&#39;^2\)</span>, equality hold only if <span class="math inline">\(\widetilde g\)</span> and <span class="math inline">\(g\)</span> are identical.</p>
+<p>Proof:</p>
+<p>Define <span class="math inline">\(h\in S_2[a,b]\)</span> by <span class="math inline">\(h=\widetilde g-g\)</span>.
+<span class="math display">\[
+\begin{aligned}
+\int _a^b\widetilde g&#39;&#39;^2 &amp;=\int_a^b(g&#39;&#39;+h&#39;&#39;)^2=\int _a^b g&#39;&#39;^2+2g&#39;&#39;h&#39;&#39;+h&#39;&#39;^2\\
+\end{aligned}
+\]</span>
+Then we need deal with the interact term.
+We have
+<span class="math display">\[
+\begin{align}
+\int _a ^b g&#39;&#39;(t)h&#39;&#39;(t)dt&amp;=-\int _a ^b g&#39;&#39;&#39;(t)h&#39;(t)dt\\
+&amp;=-\sum _{j=1}^{n-1} g&#39;&#39;&#39;(t^+_j)\int _{t_{j}}^{t_{j+1}}h&#39;(t)dt\\
+&amp;=-\sum _{j=1}^{n-1} g&#39;&#39;&#39;(t_j^+)\{h(t_{j+1})-h(t_j)\}=0
+\end{align}
+\]</span>
+Then the interact term is 0. We have
+<span class="math display">\[
+\begin{aligned}
+\int _a^b\widetilde g&#39;&#39;^2 &amp;=\int_a^bg&#39;&#39;^2+\int _a^bh&#39;&#39;^2\geq \int _a ^b g&#39;&#39;^2\\
+\end{aligned}
+\]</span>
+QED.</p>
+<p>Advantage of NCS: neatly expressed and intuitively attractive minimization, can be calculated in linear time and stored easily as a piecewise polynomial. Not limited by the knots choosen and spline structure itself.</p>
 </div>
 </div>
 
