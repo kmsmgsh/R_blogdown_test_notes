@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.36.1" />
 
 
-<title>Nonparametric regression - A Hugo website</title>
-<meta property="og:title" content="Nonparametric regression - A Hugo website">
+<title>Natural cubic spline for Non-parametric regression - A Hugo website</title>
+<meta property="og:title" content="Natural cubic spline for Non-parametric regression - A Hugo website">
 
 
 
@@ -54,10 +54,10 @@
 
   <article class="article">
     
-    <span class="article-duration">6 min read</span>
+    <span class="article-duration">10 min read</span>
     
 
-    <h1 class="article-title">Nonparametric regression</h1>
+    <h1 class="article-title">Natural cubic spline for Non-parametric regression</h1>
 
     
     <span class="article-date">2018/02/19</span>
@@ -119,11 +119,12 @@ g_i=g(t_i)\ and\ \gamma_i=g&#39;&#39;(t_i)\ for\ i=1,...,n
 \]</span>
 <span class="math inline">\(\mathbf{g}=(g_1,...,g_n)^T,\mathbf{\gamma}=(\gamma_1,...,\gamma_n)^T\)</span>. Author assert <span class="math inline">\(\mathbf{g},\mathbf{\gamma}\)</span> specify the g completely.</p>
 <blockquote>
-<p>comment:(Failed)</p>
+<p><del>comment:(Failed)</del></p>
 <ul>
-<li><p>As the comment before, if it only contains 3n+6 constrains, then give extra information in <span class="math inline">\(g&#39;&#39;\)</span>, it would have extra n constrains,than totally 4n+8 constrains. Than if it has solution, it should be unique.</p></li>
-<li><p>Back to begging for count: n+2 constrains for value <span class="math inline">\(z_i\)</span>,4 nature boundary conditions,n constrains for <span class="math inline">\(g&#39;&#39;\)</span>,n constrains for agree <span class="math inline">\(g\)</span>, not meet the 4n+8 parameters.</p></li>
-<li><p>Think in a nother way, the linear system. We have n+2 cubic polynomials, each polynomials have 4 parameters. Two value of polynomials, the tail and the head: two constrains. The tail and head 2-derivatives: two constrains. Tail and head 1-derivatives: agree or 0: another 2 constrains. Then there are 6 constrains for 4 parameters.Ofc some a degenerate, but how to count in this way? Refer to ESL again.</p></li>
+<li><p><del>As the comment before, if it only contains 3n+6 constrains, then give extra information in <span class="math inline">\(g&#39;&#39;\)</span>, it would have extra n constrains,than totally 4n+8 constrains. Than if it has solution, it should be unique.</del></p></li>
+<li><p><del>Back to begging for count: n+2 constrains for value <span class="math inline">\(z_i\)</span>,4 nature boundary conditions,n constrains for <span class="math inline">\(g&#39;&#39;\)</span>,n constrains for agree <span class="math inline">\(g\)</span>, not meet the 4n+8 parameters.</del></p></li>
+<li><p><del>Think in a nother way, the linear system. We have n+2 cubic polynomials, each polynomials have 4 parameters. Two value of polynomials, the tail and the head: two constrains. The tail and head 2-derivatives: two constrains. Tail and head 1-derivatives: agree or 0: another 2 constrains. Then there are 6 constrains for 4 parameters.Ofc some a degenerate, but how to count in this way?</del></p></li>
+<li><p>Refer to ESL again.</p></li>
 </ul>
 </blockquote>
 <p>The neccesaary and sufficient condition for the vectors genuinely to represent a natural cubic spline on the given knot sequence.</p>
@@ -184,6 +185,7 @@ Back to the beginning of this document, the intuitively definition of smoothness
 Since <span class="math inline">\(\mathbf{R}\)</span> is strictly positive-definite, there will be aunique <span class="math inline">\(\gamma=R^{-1}Q^T\mathbf{g}\)</span>.QED.</p>
 <p>The key thing is the previous theorem, but idk yet how to prove that.</p>
 <p>Computation discussion:</p>
+<p>Then let us ask the third question, how to calculate.</p>
 <p>As the R is band matrix with width of band is 2,a triagonal matrix, we do not need to calculate the <span class="math inline">\(R^{-1}\)</span>, there is a fast and iteravie algorithm to get the answer with O(n). There are also special structure for Q, we also do not need to calculate <span class="math inline">\(Q^T\mathbf{g}\)</span> in the matrix manipulate way, we have
 <span class="math display">\[
 (Q^T\mathbf{g})_i=\frac{g_{i+1}-g_{i}}{h_i}-\frac{g_i-g_{i-1}}{h_{i-1}}
@@ -228,6 +230,101 @@ Then the interact term is 0. We have
 \]</span>
 QED.</p>
 <p>Advantage of NCS: neatly expressed and intuitively attractive minimization, can be calculated in linear time and stored easily as a piecewise polynomial. Not limited by the knots choosen and spline structure itself.</p>
+</div>
+<div id="smoothing-spline" class="section level4">
+<h4>2.3 Smoothing Spline</h4>
+<p>Notation: <span class="math inline">\(a&lt;t_1&lt;...&lt;t_n&lt;b\)</span> is the knots we defined before, with the observation <span class="math inline">\(Y_1,...,Y_n\)</span>.
+Assuming <span class="math inline">\(n\geq 3\)</span> to make sure condition in previous theorem are not meaningless. Because when <span class="math inline">\(n=2,1\)</span>, then the smoothing line is meaningless, the best curve is just the line cross these two points.
+Reminder the form of roughness penalty with the least square loss function as
+<span class="math display">\[
+S(g)=\sum _{i=1}^n \{ Y_i-g(t) \}^2+\alpha \int _a ^b {g&#39;&#39;(x)}^2 dx
+\]</span>
+Our goal is
+<span class="math display">\[
+\hat g = argmin_{g\ in\ S_2[a,b]} S(g)
+\]</span></p>
+<div id="restricting-the-class-of-function-to-be-considered" class="section level5">
+<h5>2.3.1 Restricting the class of function to be considered</h5>
+<ul>
+<li>g is neccessarily a natural cubic spline with knots at the points <span class="math inline">\(t_i\)</span>.
+<ul>
+<li>Suppose g is any function but not a NCS, <span class="math inline">\(\overline g\)</span> is NCS interpolant to the values <span class="math inline">\(g(t_1)\)</span>, then <span class="math inline">\(\overline g(t_i)=g(t_i)\)</span>. Then we have <span class="math inline">\(\sum \{Y_i-\overline g(t_i)\}^2=\sum \{Y_i-g(t_i)\}^2\)</span>. Then the first term of <span class="math inline">\(S(g)\)</span> is the same. By the previous theorem, we have <span class="math inline">\(\int \overline g&#39;&#39;^2&lt;\int g&#39;&#39; ^2\)</span>, since <span class="math inline">\(\alpha &gt; 0\)</span>, then <span class="math inline">\(S(\overline g)&lt; S(g)\)</span>. This means Unless g is a natural cubic spline, we can find a smoother NCS to cross the same points as g but less roughness penalty. Then our task from search all the function in <span class="math inline">\(S_2[a,b]\)</span> becomes only a finite set, only search a natural cubic spline with knots <span class="math inline">\(t_i\)</span>.<span class="math display">\[S_2[a,b]\rightarrow NCS[a,b]\]</span>. Then the problem becomes to found a NCS, or more specificly, find the coefficients of the cubic spline.</li>
+</ul></li>
+</ul>
+</div>
+<div id="existence-uniqueness-of-the-minimizing-spline-curve." class="section level5">
+<h5>2.3.2 Existence &amp; Uniqueness of the minimizing spline curve.</h5>
+<ul>
+<li>Suppose g is a NCS with <span class="math inline">\(g,\gamma,Q,R\)</span> (Definition in first theorem).</li>
+<li>Represent <span class="math inline">\(S(g)\)</span> by <span class="math inline">\(g,\gamma,Q,R\)</span> in order to minimizer g existance and unique.
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\sum\{ Y_i-g(t_i) \}^2=(Y-g)^T(Y-g)\)</span></li>
+<li>Roughness penalty: <span class="math inline">\(\int g&#39;&#39;=g^TKg\)</span> (By first theorem).
+<span class="math display">\[
+\begin{align}
+S(g)&amp;=(Y-g)^T(Y-g)+\alpha g^TKg\\
+&amp;=g^T(I+\alpha K)g-2Y^Tg+Y^TY
+\end{align}
+\]</span></li>
+</ol></li>
+</ul>
+<p><span class="math inline">\(\alpha K\)</span> is Non-negative definite.</p>
+<p><span class="math inline">\(I+\alpha K\)</span> is Strictly positive definite.</p>
+<p>Then back to the <span class="math inline">\(S(g)=g^T(I+\alpha K)g-2Y^Tg+Y^TY\)</span>, a quadratic form with the positive definite matrix. Then unique minimum by setting <span class="math inline">\(g=(I+\alpha K)^{-1} Y\)</span>. Because we can rewrite the quadratic form as <span class="math inline">\(\{\mathbf{g}-(I+\alpha K)^{-1}\mathbf{Y}\}^T(I+\alpha K)\{\mathbf{g}-(I+\alpha K)^{-1}\}+c(Y)\)</span>. Then this is a quadratic form is always strictly positive except <span class="math inline">\(\mathbf{g}\)</span> satisfies <span class="math inline">\((1+\alpha K)^{-1}\mathbf{Y}\)</span>, when it is zero.</p>
+<blockquote>
+<p>Comment:
+The condition for uniqueness and existenc of the solve of quadratic form???? More mathmatics maybe?</p>
+</blockquote>
+<p>By the second theorem, once got <span class="math inline">\(\mathbf{g}\)</span>, it defines the spline g uniquely.</p>
+<p>Theorem 2.4 Suppose <span class="math inline">\(n\geq 3\)</span>, and knots <span class="math inline">\(t_1,...,t_n\)</span> are knots with <span class="math inline">\(a&lt;t_1&lt;...&lt;t_n&lt;b.\)</span> Observations <span class="math inline">\(Y_1,...,Y_n\)</span> and a strictly positive smoothing parameter <span class="math inline">\(\alpha\)</span>.<span class="math inline">\(\hat g\)</span> be the Natural cubic spline with knots at <span class="math inline">\(t_1,...,t_n\)</span> defined by <span class="math inline">\(\mathbf{g}=(I+\alpha K)^{-1}\mathbf{Y}\)</span>. Then for any given g in <span class="math inline">\(S_2[a,b]\)</span>,
+<span class="math display">\[
+S(\hat g)\geq S(g)
+\]</span>
+with equality only if g and <span class="math inline">\(\hat g\)</span> are identical.</p>
+<p>Using the result upon, we can deduce a algorithm to calculate the cubic smoothing spline.</p>
+</div>
+<div id="the-reinsch-algorithm" class="section level5">
+<h5>The Reinsch algorithm</h5>
+<p>Overall strategy: Set up a non-singular linear system for <span class="math inline">\(\gamma_i\)</span> of <span class="math inline">\(\hat g\)</span> at knots <span class="math inline">\(t_i\)</span>. The matrix of the linear system is banded matrix, then can be solved with O(n). From <span class="math inline">\(K=QR^{-1}Q^T\)</span> and <span class="math inline">\(g=(I+\alpha K)^{-1} Y\)</span>, we have
+<span class="math display">\[
+\begin{align}
+(I+\alpha QR^{-1}Q^T)\mathbf{g}&amp;=Y\\
+\mathbf{g}&amp;=Y-\alpha QR^{-1}Q^T\mathbf{g}
+\end{align}
+\]</span>
+Also by theorem2.1, <span class="math inline">\(Q^T\mathbf{g}=R\gamma\)</span>
+<span class="math display">\[
+\begin{align}
+\mathbf{g}=Y-\alpha Q\gamma\\
+(R+\alpha Q^TQ)\gamma=Q^TY
+\end{align}
+\]</span>
+<span class="math inline">\(R+\alpha Q^TQ\)</span> is a bandmatrix with bandwidth 5, it is also symmetric and strictly positive-definite. Solve this can get <span class="math inline">\(\gamma\)</span>.
+In order to make it sufficiency, it has a Cholesky decomposition of the form
+<span class="math display">\[
+R+\alpha Q^TQ=LDL^T
+\]</span>
+D is a strictly positive diagonal matrix, L is a lower triangular band matrix with <span class="math inline">\(L_{ij}=0\)</span> for <span class="math inline">\(j&lt;i-2\)</span> and <span class="math inline">\(j&gt;i\)</span>, and <span class="math inline">\(L_{ii}=1\)</span> for all i. Q,R are band matrices, can be found in O(n) algebraic operations and only need store the non-zero diagonals. L and D also require linear time for computation.
+Then the following is Reinsch algorithm, each step can be performed in O(n) algebraic operations.</p>
+</div>
+<div id="algorithm-for-spline-smoothing" class="section level5">
+<h5>Algorithm for spline smoothing</h5>
+<ul>
+<li><strong>STEP 1</strong> Evaluate the vector <span class="math inline">\(Q^TY\)</span>, by using the formula <span class="math inline">\((Q^T\mathbf{g})_i=\frac{g_{i+1}-g_{i}}{h_i}-\frac{g_i-g_{i-1}}{h_{i-1}}\)</span></li>
+<li><strong>STEP 2</strong> Find the non-zero diagonals of <span class="math inline">\(R+\alpha Q^TQ\)</span>, then calculate the cholesky decomposition factor L and D.</li>
+<li><strong>STEP 3</strong> Write <span class="math inline">\((R+\alpha Q^TQ)\gamma=Q^TY\)</span> and solve this equation for <span class="math inline">\(\gamma\)</span> by forward and back substitution.</li>
+<li><strong>STEP 4</strong> From (2.14), use
+<span class="math display">\[
+\mathbf{g}=Y-\alpha Q\gamma
+\]</span>
+to find <span class="math inline">\(\mathbf{g}\)</span>.</li>
+</ul>
+<p><strong>STEP 1</strong> need only performed once for each data set and not need repeat if new value <span class="math inline">\(\alpha\)</span> is used.(In the circumstance that using AIC, BIC…. method to find the best <span class="math inline">\(\alpha\)</span>). If new data value <span class="math inline">\(Y\)</span> are used, Step 1 need to repeat but step 2 only involve design matrix X, not need to be repeated.</p>
+<blockquote>
+<p>Comment:
+All of these results and based on the construction in theorem 1, the form of Q and R. Not only the minimize property, but also the existence, uniqueness, and the calculation methods. But why construction like that is mysterious for me right now. Even the next part proves the theorem, but the proof is based on the structure of Q and R, rather than how to get Q and R, so still unknown.</p>
+</blockquote>
+</div>
 </div>
 </div>
 
