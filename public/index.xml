@@ -38,7 +38,8 @@ The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>This web page is based on the example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.
+And the web page is made by Jiaming Shen ()</description>
     </item>
     
   </channel>
