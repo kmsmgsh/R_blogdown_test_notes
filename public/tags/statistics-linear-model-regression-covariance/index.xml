@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on A Hugo website</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on A Hugo website</description>
+    <title>Statistics Linear Model Regression Covariance on A Hugo website</title>
+    <link>/tags/statistics-linear-model-regression-covariance/</link>
+    <description>Recent content in Statistics Linear Model Regression Covariance on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/statistics-linear-model-regression-covariance/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,27 +20,6 @@
       <description>Random Intercept Model: \[ \begin{align} &amp;amp;Y_{ij}=\mu_{ij}+b_i+\epsilon_{ij}\\ &amp;amp;E_{ij}=\mu_{ij},b_i\sim N(0,\sigma_b^2),\epsilon_{ij}=N(0,\sigma^2_\epsilon) \end{align} \] The matrix form is \[ Y_i=\mu_i+1_{n_i}b_i+\epsilon_i \]
 Under this setting, the variance of \(Y_i\) is
 \[ \begin{align} Var(Y_i)&amp;amp;=Var(1_{n_i}b_i+\epsilon_i)\\ &amp;amp;=Var(1_{n_i}b_i)+Var(\epsilon_i)\\ &amp;amp;=\sigma_b^2J_{n_i}+\sigma_\epsilon^2I_{n_i}\\ &amp;amp;=(\sigma_b^2+\sigma^2_\epsilon)[(1-\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon})I_{n_i}+\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon}J_{n_i}]\\ &amp;amp;=\sigma^2[(1-\rho)I_{n_i}+\rho J_{n_i}] \end{align} \] Which is followed the compound symmetry(Uniform/Exchangeable correlation.) \[ \Sigma_i=\sigma^2\begin{bmatrix} 1 &amp;amp; \rho &amp;amp; \dots &amp;amp; \rho \\ \rho &amp;amp; 1 &amp;amp; \dots &amp;amp; \rho \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\ \rho &amp;amp; \rho &amp;amp; \dots &amp;amp; 1 \end{bmatrix}_{n_i\times n_i} \]</description>
-    </item>
-    
-    <item>
-      <title>Natural cubic spline for Non-parametric regression</title>
-      <link>/2018/02/19/nonparametric-regression/</link>
-      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/02/19/nonparametric-regression/</guid>
-      <description>Here is the a new note about the non-parametric regression.
-Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve \(g\) is. An intuitively way is \(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\),the integrated squared second derivative.
-The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&amp;#39;&amp;#39;(x)^2\}dx\] So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.</description>
-    </item>
-    
-    <item>
-      <title>Test R markdown function</title>
-      <link>/2018/02/19/test-r-markdown-function/</link>
-      <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/02/19/test-r-markdown-function/</guid>
-      <description>This is the first page by r markdown, and it is only a simple markdown now.
-1 + 1 # not executed </description>
     </item>
     
   </channel>

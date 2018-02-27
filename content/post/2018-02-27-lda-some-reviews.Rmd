@@ -1,0 +1,198 @@
+---
+title: LDA some reviews
+author: Jiaming Shen
+date: '2018-02-27'
+slug: lda-some-reviews
+categories: statitics notes
+tags: statistics, linear model, regression, covariance
+---
+
+### Random Intercept Model:
+
+$$
+\begin{align}
+&Y_{ij}=\mu_{ij}+b_i+\epsilon_{ij}\\
+&E_{ij}=\mu_{ij},b_i\sim N(0,\sigma_b^2),\epsilon_{ij}=N(0,\sigma^2_\epsilon)
+\end{align}
+$$
+The matrix form is
+$$
+Y_i=\mu_i+1_{n_i}b_i+\epsilon_i
+$$
+
+Under this setting, the variance of $Y_i$ is 
+
+$$
+\begin{align}
+Var(Y_i)&=Var(1_{n_i}b_i+\epsilon_i)\\
+&=Var(1_{n_i}b_i)+Var(\epsilon_i)\\
+&=\sigma_b^2J_{n_i}+\sigma_\epsilon^2I_{n_i}\\
+&=(\sigma_b^2+\sigma^2_\epsilon)[(1-\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon})I_{n_i}+\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon}J_{n_i}]\\
+&=\sigma^2[(1-\rho)I_{n_i}+\rho J_{n_i}]
+\end{align}
+$$
+Which is followed the compound symmetry(Uniform/Exchangeable correlation.)
+$$
+\Sigma_i=\sigma^2\begin{bmatrix}
+    1 & \rho  & \dots  & \rho \\
+    \rho & 1  & \dots  & \rho \\
+    \vdots & \vdots  & \ddots & \vdots \\
+    \rho & \rho & \dots  & 1
+\end{bmatrix}_{n_i\times n_i}
+$$
+
+### Exponential correlation structure
+
+$$
+\sigma_{ijk}=\sigma^2exp(-\phi|t_{ij}-t_{ik}|)
+$$
+If $t_{ij}$ are equally spaced, which is $t_{ij}-t_{i,j+1}=d$, then the above structure can be simplify to
+$$
+\sigma_{ijk}=\sigma^2 \rho^{|j-k|}
+$$
+This is autoregressive correlation with order one, that is, AR(1) covariance/correlation structure.
+$$
+\Sigma_i=\sigma^2\begin{bmatrix}
+    1 & \rho  & \dots  & \rho^{n_i-1} \\
+    \rho & 1  & \dots  & \rho^{n_i-2} \\
+    \vdots & \vdots  & \ddots & \vdots \\
+    \rho^{n_i-1} & \rho^{n_i-2}  & \dots  & 1
+\end{bmatrix}_{n_i\times n_i}
+$$
+Justification of AR(1) structure:
+$$
+\begin{align}
+Y_{ij}&=\mu_{ij}+W_{ij}\\
+W_{ij}&=\rho W_{i(j-1)}+\epsilon_{ij}\\
+W_{ij}&\bot \epsilon_{ij},\epsilon_{ij}\sim N(0,\sigma^2(1-\rho^2))\ with\ |\rho|<1
+\end{align}
+$$
+$W_{ij}$ are random variable with $Var(W_{ij})=\sigma^2$
+$$
+\begin{align}
+Cov(Y_{i(j-1)},Y_{ij})&=Cov(W_{i(j-1)},W_{ij})\\
+&=Cov(W_{i(j-1)},\rho W_{i(j-1)})+Cov(W_{i(j-1)},\epsilon_{ij})\\
+&=\rho Var(W_{i(j-1)})=\sigma^2\rho
+\end{align}
+$$
+
+### Autoregressive moving average (ARMA) structure:
+ARMA(1,1): AR(1)+compound symmetry model.
+lag 1 correlation is
+$$
+Corr(Y_{ij},Y_{i(j-1)})=\gamma
+$$
+$\rho$ is additional in correlation in each lag.
+$$
+Corr(Y_{ij},Y_{i,j-k})=\gamma \rho^{k-1}
+$$
+$$
+\Sigma_i=\sigma^2\begin{bmatrix}
+    1 & \gamma  &\gamma \rho& \dots  & \gamma\rho^{n_i-2} \\
+    \gamma & 1  &\gamma &\dots  & \gamma\rho^{n_i-3} \\
+    \vdots & \vdots&\vdots  & \ddots & \vdots \\
+    \gamma\rho^{n_i-2} & \gamma\rho^{n_i-3}& \gamma\rho^{n_i-4} & \dots  & 1
+\end{bmatrix}_{n_i\times n_i}
+$$
+- $\rho=1$ is compound symmetry model
+- $\gamma=\rho$ is autoregressive model
+- $\rho=0$ is the moving average or MA model.
+
+The order-1 moving average
+$$
+\Sigma_i=\sigma^2\begin{bmatrix}
+    1 & \gamma  &0& \dots  &0 \\
+    \gamma & 1  &\gamma &\dots  & 0 \\
+    \vdots & \vdots&\vdots  & \ddots & \vdots \\
+    0 & 0&0  & \dots  & 1
+\end{bmatrix}_{n_i\times n_i}
+$$
+presenting the moving average model is
+$$
+Y_{ij}=\beta\epsilon_{i(j-1)}+\epsilon _{ij},\ Var(\epsilon_{ij})=\tau^2
+$$
+Then we have
+$$
+Var(Y_{ij})=\tau^2(1+\beta^2)
+$$
+in the $\Sigma_i$ we have
+$$
+\gamma=\frac{\beta}{1+\beta^2}, \sigma^2=\tau^2(1+\beta^2)
+$$
+Then for more general case, ARMA(1,1) have the representing as
+$$
+Y_{ij}=\mu_{ij}+\rho W_{i(j-1)}+\beta \epsilon_{i(j-1)}+\epsilon_{ij}
+$$
+For more general cases, the ARMA(p,q) model can be expressed by
+$$
+W_{ij}=\sum^p_{r=1}\rho_r W_{i(j-r)}+\sum_{k=1}^q \beta_k\epsilon_{i(j-k)}+\epsilon_{ij}
+$$
+
+#### Toeplitz or Banded covariance structure
+
+$$
+\Sigma_i=\sigma^2\begin{bmatrix}
+    1 & \rho_1  &\rho_2& \rho_3  &\rho_4\\
+    \rho_1 & 1  &\rho_1 &\rho_2  & \rho_3 \\
+    \rho_2 & \rho_1&1  &\rho_1 & \rho_2 \\
+    \rho_3 &\rho_2&\rho_1  & 1  & \rho_2\\
+    \rho_4&\rho_3&\rho_2&\rho_1&1
+\end{bmatrix}_{n_i\times n_i}
+$$
+
+The correlation stucture is that the same lag share the same covariance.
+AR(1) and ARMA(1,1) covariance structures are special cases of the banded covariances.
+
+#### General/Unstructured covariances:
+$\Sigma$ is totally unknown, then the number of unknown parameters is $\sum _{i=1}^n \frac{n_i(n_i+1)}{2}$. The problem here is that there are so many parameters but not that many of observations. Then this is a not identifiable model.
+
+$\Sigma_i=\sigma^2V_i$
+
+....tbc
+
+#### Restricted maximum likelihood estimation
+
+Normal linear models with correlated random errors,i.e.
+
+$$
+Y\sim N_N(X\beta,\sigma^2V),V=diag(V_1,...,V_m)
+$$
+V depend on a new parameter scalar/vector $\theta$, that is $V\equiv V(\theta)$.
+
+Restricted maximum likelihood (REML) estimation procedure is to obtain MLE of variance components $\theta$ in V and $\sigma$ based on a linearly transformed set of data
+$$
+Y^*=AY
+$$
+A need to make the distribution of $Y^*$ does not depend on the fixed effects $\beta$.
+One way is
+$$
+A=I_N-X(X'X)^{-1}X'
+$$
+This converts Y to the OLS residuals, because the origin Y followed the Normal distribution, A is a linear combination.
+The rank of matrix A is n-p, here is the proof
+$$
+\begin{align}
+rank(A)=trace(A)&=trace(I_N-X(X'X)^{-1}X')\\
+&=n-trace(X(X'X)^{-1}X')\\
+&=n-trace(I_p)\\
+&=n-p
+\end{align}
+$$
+Then A is a singular matrix and so does $AVA'$.Some results showed that the resulting estimates of $\sigma^2$ and $\theta$ is not depend on the choice of A. So any rank N-p matrix A satisfying $E(Y^*)=0$
+
+
+
+Then distribution of $Y^*$ follows the Normal distribution with
+$$
+\begin{align}
+E(Y^*)=AE(Y)=AX\beta=[I_N-X(X'X)^{-1}X']X\beta=0\\
+Var(Y^*)=AVar(Y)A'=\sigma^2AVA'
+\end{align}
+$$
+The distribution of $Y^*$ is not depend on fixed effexts $\beta$
+
+>Comments:
+> Why need do such thing?
+> Not really got the idea in the P85/(187)
+> and the quantity of N-p????? May in the setting inside the likelihood deducing.
+

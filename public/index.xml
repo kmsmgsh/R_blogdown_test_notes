@@ -6,10 +6,21 @@
     <description>Recent content on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LDA some reviews</title>
+      <link>/2018/02/27/lda-some-reviews/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/27/lda-some-reviews/</guid>
+      <description>Random Intercept Model: \[ \begin{align} &amp;amp;Y_{ij}=\mu_{ij}+b_i+\epsilon_{ij}\\ &amp;amp;E_{ij}=\mu_{ij},b_i\sim N(0,\sigma_b^2),\epsilon_{ij}=N(0,\sigma^2_\epsilon) \end{align} \] The matrix form is \[ Y_i=\mu_i+1_{n_i}b_i+\epsilon_i \]
+Under this setting, the variance of \(Y_i\) is
+\[ \begin{align} Var(Y_i)&amp;amp;=Var(1_{n_i}b_i+\epsilon_i)\\ &amp;amp;=Var(1_{n_i}b_i)+Var(\epsilon_i)\\ &amp;amp;=\sigma_b^2J_{n_i}+\sigma_\epsilon^2I_{n_i}\\ &amp;amp;=(\sigma_b^2+\sigma^2_\epsilon)[(1-\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon})I_{n_i}+\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon}J_{n_i}]\\ &amp;amp;=\sigma^2[(1-\rho)I_{n_i}+\rho J_{n_i}] \end{align} \] Which is followed the compound symmetry(Uniform/Exchangeable correlation.) \[ \Sigma_i=\sigma^2\begin{bmatrix} 1 &amp;amp; \rho &amp;amp; \dots &amp;amp; \rho \\ \rho &amp;amp; 1 &amp;amp; \dots &amp;amp; \rho \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\ \rho &amp;amp; \rho &amp;amp; \dots &amp;amp; 1 \end{bmatrix}_{n_i\times n_i} \]</description>
+    </item>
     
     <item>
       <title>Natural cubic spline for Non-parametric regression</title>
