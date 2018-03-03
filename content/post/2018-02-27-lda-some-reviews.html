@@ -188,5 +188,54 @@ Why need do such thing?
 Not really got the idea in the P85/(187)
 and the quantity of N-p????? May in the setting inside the likelihood deducing.</p>
 </blockquote>
+<blockquote>
+<p>Answer to Comments:
+The origin idea of get the estimation of <span class="math inline">\(\beta\)</span> is get the <span class="math inline">\(\beta(\sigma,V(\theta))\)</span>, first, then use this to get MLE of <span class="math inline">\(\hat \sigma\)</span>, then get the <span class="math inline">\(\hat V(\hat \theta)\)</span>. Finally to substitute back to <span class="math inline">\(\beta(\sigma,V(\theta))\)</span> to get the estimation of fixed effect <span class="math inline">\(\beta\)</span>. Then this idea generalized by escape the step of get the <span class="math inline">\(\hat \beta(V,\sigma)\)</span>, directly get the <span class="math inline">\(V(\hat \theta)\)</span>, then substitute back to get <span class="math inline">\(\theta\)</span>.</p>
+</blockquote>
+</div>
+<div id="the-restricted-likelihood-estimation-reml" class="section level4">
+<h4>The restricted likelihood estimation (REML)</h4>
+<p>…tbc…</p>
+</div>
+<div id="the-linear-mixed-model.lmm" class="section level4">
+<h4>The linear mixed model.(LMM)</h4>
+<p>Linear model+random effects.</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(Y_i\)</span> is <span class="math inline">\(n_i\)</span> dimensionvector of response for the i-th subject (<span class="math inline">\(i=1,2,...,m\)</span>), observations being record at <span class="math inline">\(t_i=(t_{i1},t_{i2},...,t_{in_i})&#39;\)</span> with
+<span class="math display">\[
+Y_i=\mathbf{Z}_i\beta_i+\epsilon_i\   i=1,2,...m
+\]</span>
+<span class="math inline">\(\mathbf{Z}_i\)</span> is an (<span class="math inline">\(n_i\times q\)</span>) design matrix of known covariates and <span class="math inline">\(\beta_i\)</span> is an <span class="math inline">\(q\times 1\)</span> vector of subject specific regression parameters. <span class="math inline">\(\epsilon_i\)</span> are assumed to be <span class="math inline">\(N_{n_i}(0,R_i)\)</span>.</p></li>
+<li><p>The second stage is to model the heterogeneity between individuals:
+<span class="math display">\[
+\beta_i=\mathbf{K}_i\beta+\mathbf{b}_i,\ \ \ i=1,2,...,m
+\]</span>
+where <span class="math inline">\(\mathbf{K}_i\)</span> is an (<span class="math inline">\(q\times p\)</span>) design matix of known covariates and <span class="math inline">\(\beta\)</span> is an (<span class="math inline">\(p\times 1\)</span>) vector of unknown regression parameters.</p></li>
+</ol>
+<p>The q-dimensional <span class="math inline">\(\mathbf{b}_i\)</span> are random vectors, assumed to be independent and multivariate normally distributed, <span class="math inline">\(\mathbf{b}_i\sim N_q(0,\mathbf{G})\)</span>.</p>
+</div>
+<div id="linear-mixed-model-or-laird-ware-model" class="section level4">
+<h4>Linear mixed model or Laird-Ware model:</h4>
+<p><span class="math display">\[
+\mathbf{Y}_i=\mathbf{X}_i \beta+\mathbf{Z}_i\mathbf{b}_i+\epsilon_i, (i=1,2,...,m)
+\]</span>
+where <span class="math inline">\(\mathbf{b}_1,...,\mathbf{b}_m,\epsilon_1,...,\epsilon_m\)</span> are assumed to be independent, <span class="math inline">\(\mathbf{X}_i=\mathbf{Z}_i\mathbf{K}_i\)</span>,<span class="math inline">\(\beta\)</span> is the fixed effects and <span class="math inline">\(\mathbf{b}_i\)</span> the subject specific random effects.
+<span class="math display">\[
+\mathbf{Y}_i\sim N(\mathbf{X}_i\beta,\mathbf{\Sigma}_i),\mathbf{\Sigma}_i=\mathbf{R}_i+\mathbf{Z}_i\mathbf{G}\mathbf{Z}&#39;_i
+\]</span>
+Compromise all the observation in <span class="math inline">\(\mathbf{Y}\)</span>, that is <span class="math inline">\(\mathbf{Y}=(\mathbf{Y}_1,...,\mathbf{Y}_m)&#39;\)</span>. Then
+<span class="math display">\[
+\mathbf{Y}\sim \mathbf{N}_N(\mathbf{X}\beta,\mathbf{\Sigma})
+\]</span>
+with <span class="math inline">\(N=\sum^m_{i=1} n_i\)</span>,<span class="math inline">\(\mathbf{X}=(\mathbf{X}_1,\dots,\mathbf{X}_m)&#39;\)</span>,<span class="math inline">\(\mathbf{\Sigma}\)</span> with the following form
+<span class="math display">\[
+\Sigma=\begin{bmatrix}
+    \mathbf{\Sigma}_1 &amp;0&amp; \dots  &amp;0 \\
+    0 &amp; \mathbf{\Sigma}_2   &amp;\dots  &amp; 0 \\
+    \vdots &amp; \vdots&amp; \ddots &amp; \vdots \\
+    0 &amp; 0 &amp; \dots  &amp; \mathbf{\Sigma}_m
+\end{bmatrix}
+\]</span>
+The LMM effectively fits a statistical model to repeated measurement for each subject.</p>
 </div>
 </div>

@@ -196,3 +196,51 @@ The distribution of $Y^*$ is not depend on fixed effexts $\beta$
 > Not really got the idea in the P85/(187)
 > and the quantity of N-p????? May in the setting inside the likelihood deducing.
 
+>Answer to Comments:
+>The origin idea of get the estimation of $\beta$ is get the $\beta(\sigma,V(\theta))$, first, then use this to get MLE of $\hat \sigma$, then get the $\hat V(\hat \theta)$. Finally to substitute back to $\beta(\sigma,V(\theta))$ to get the estimation of fixed effect $\beta$. Then this idea generalized by escape the step of get the $\hat \beta(V,\sigma)$, directly get the $V(\hat \theta)$, then substitute back to get $\theta$.
+
+#### The restricted likelihood estimation (REML)
+
+...tbc...
+
+#### The linear mixed model.(LMM)
+
+Linear model+random effects.
+
+1. $Y_i$ is $n_i$ dimensionvector of response for the i-th subject ($i=1,2,...,m$), observations being record at $t_i=(t_{i1},t_{i2},...,t_{in_i})'$ with
+$$
+Y_i=\mathbf{Z}_i\beta_i+\epsilon_i\   i=1,2,...m
+$$
+$\mathbf{Z}_i$ is an ($n_i\times q$) design matrix of known covariates and $\beta_i$ is an $q\times 1$ vector of subject specific regression parameters. $\epsilon_i$ are assumed to be $N_{n_i}(0,R_i)$.
+
+2. The second stage is to model the heterogeneity between individuals:
+$$
+\beta_i=\mathbf{K}_i\beta+\mathbf{b}_i,\ \ \ i=1,2,...,m
+$$
+where $\mathbf{K}_i$ is an ($q\times p$) design matix of known covariates and $\beta$ is an ($p\times 1$) vector of unknown regression parameters.
+
+The q-dimensional $\mathbf{b}_i$ are random vectors, assumed to be independent and multivariate normally distributed, $\mathbf{b}_i\sim N_q(0,\mathbf{G})$.
+
+#### Linear mixed model or Laird-Ware model:
+
+$$
+\mathbf{Y}_i=\mathbf{X}_i \beta+\mathbf{Z}_i\mathbf{b}_i+\epsilon_i, (i=1,2,...,m)
+$$
+where $\mathbf{b}_1,...,\mathbf{b}_m,\epsilon_1,...,\epsilon_m$ are assumed to be independent, $\mathbf{X}_i=\mathbf{Z}_i\mathbf{K}_i$,$\beta$ is the fixed effects and $\mathbf{b}_i$ the subject specific random effects.
+$$
+\mathbf{Y}_i\sim N(\mathbf{X}_i\beta,\mathbf{\Sigma}_i),\mathbf{\Sigma}_i=\mathbf{R}_i+\mathbf{Z}_i\mathbf{G}\mathbf{Z}'_i
+$$
+Compromise all the observation in $\mathbf{Y}$, that is $\mathbf{Y}=(\mathbf{Y}_1,...,\mathbf{Y}_m)'$. Then
+$$
+\mathbf{Y}\sim \mathbf{N}_N(\mathbf{X}\beta,\mathbf{\Sigma})
+$$
+with $N=\sum^m_{i=1} n_i$,$\mathbf{X}=(\mathbf{X}_1,\dots,\mathbf{X}_m)'$,$\mathbf{\Sigma}$ with the following form
+$$
+\Sigma=\begin{bmatrix}
+    \mathbf{\Sigma}_1 &0& \dots  &0 \\
+    0 & \mathbf{\Sigma}_2   &\dots  & 0 \\
+    \vdots & \vdots& \ddots & \vdots \\
+    0 & 0 & \dots  & \mathbf{\Sigma}_m
+\end{bmatrix}
+$$
+The LMM effectively fits a statistical model to repeated measurement for each subject. 
