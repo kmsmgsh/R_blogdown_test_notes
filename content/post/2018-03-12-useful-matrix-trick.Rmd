@@ -1,0 +1,26 @@
+---
+title: 'Useful Matrix trick '
+author: Jiaming
+date: '2018-03-12'
+slug: useful-matrix-trick
+categories:
+  - Mathematics
+  - matrix
+  - multivariable
+tags:
+  - mathematics
+  - matrix
+  - Multivariable analysis
+---
+
+This is found by  Chapter "the multivariate Normal distribution"" by T.W. Anderson(1984),"An Introduction to Multivariate Analysis".P18 (31).
+The
+$$
+\begin{aligned}
+&E(DZE+F)\\
+&=(\sum _{h,g} d_{ih}Z_{hg}e_{gj}+f_{ij})=\sum_{h,g}d_{ih}(EZ_{h,g})e_{gj}+f_{ij}
+\end{aligned}
+$$
+It may useful to mark $DZE$ is $\sum _{h,g} d_{ih}Z_{hg}e_{gj}$, maybe can make quadratic form more handleable.
+
+
