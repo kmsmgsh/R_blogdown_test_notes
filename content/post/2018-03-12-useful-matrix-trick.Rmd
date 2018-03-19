@@ -24,3 +24,6 @@ $$
 It may useful to mark $DZE$ is $\sum _{h,g} d_{ih}Z_{hg}e_{gj}$, maybe can make quadratic form more handleable.
 
 
+
+
+

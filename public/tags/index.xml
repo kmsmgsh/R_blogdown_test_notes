@@ -6,10 +6,19 @@
     <description>Recent content in Tags on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Mark</title>
@@ -21,11 +30,47 @@
     </item>
     
     <item>
+      <title>Mathematics</title>
+      <link>/tags/mathematics/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mathematics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix</title>
+      <link>/tags/matrix/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multivariable Analysis</title>
+      <link>/tags/multivariable-analysis/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/multivariable-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Nonparametric</title>
       <link>/tags/nonparametric/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/nonparametric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -71,6 +116,15 @@
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trick</title>
+      <link>/tags/trick/</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trick/</guid>
       <description></description>
     </item>
     

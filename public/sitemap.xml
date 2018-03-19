@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/03/19/c-prime-notes/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/03/12/useful-matrix-trick/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/02/27/lda-some-reviews/</loc>
     <lastmod>2018-02-27T00:00:00+00:00</lastmod>
   </url>
@@ -28,18 +38,67 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/c&#43;&#43;/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/c&#43;&#43;/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/mark/</loc>
     <lastmod>2018-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mathematics/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/mathematics/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/matrix/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/matrix/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/multivariable/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/multivariable-analysis/</loc>
+    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,7 +110,19 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/programming/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/programming/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -99,13 +170,19 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-02-19T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/test/</loc>
     <lastmod>2018-02-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/trick/</loc>
+    <lastmod>2018-03-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

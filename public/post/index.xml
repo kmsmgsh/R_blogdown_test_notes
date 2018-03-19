@@ -6,10 +6,28 @@
     <description>Recent content in Posts on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C&#43;&#43; prime notes</title>
+      <link>/2018/03/19/c-prime-notes/</link>
+      <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/19/c-prime-notes/</guid>
+      <description>Here is some thinking about the “basic” language, and generalization or simple. It should in the using the c++, to print the results of the some calculation, like a array, how to simply print the content out? In more simpler language, just print(), it’s okay. But if u directly print(or use cout) in c++, it will print address of the array. This is about how the language works and the basic rules?</description>
+    </item>
+    
+    <item>
+      <title>Useful Matrix trick </title>
+      <link>/2018/03/12/useful-matrix-trick/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/12/useful-matrix-trick/</guid>
+      <description>This is found by Chapter “the multivariate Normal distribution”&amp;quot; by T.W. Anderson(1984),“An Introduction to Multivariate Analysis”.P18 (31). The \[ \begin{aligned} &amp;amp;E(DZE+F)\\ &amp;amp;=(\sum _{h,g} d_{ih}Z_{hg}e_{gj}+f_{ij})=\sum_{h,g}d_{ih}(EZ_{h,g})e_{gj}+f_{ij} \end{aligned} \] It may useful to mark \(DZE\) is \(\sum _{h,g} d_{ih}Z_{hg}e_{gj}\), maybe can make quadratic form more handleable.</description>
+    </item>
     
     <item>
       <title>LDA some reviews</title>
