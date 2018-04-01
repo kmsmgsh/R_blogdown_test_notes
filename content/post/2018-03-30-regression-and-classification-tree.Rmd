@@ -1,0 +1,127 @@
+
+
+
+
+---
+title: Regression and classification tree
+author: Jiaming
+date: '2018-03-30'
+slug: regression-and-classification-tree
+categories:
+  - programming
+  - multivariable
+  - Statistics
+  - statitics notes
+  - Decision trees
+tags:
+  - Multivariable analysis
+  - nonparametric
+  - programming
+  - R Markdown
+  - decision tree
+---
+
+
+###Chap1 The back ground.
+
+1.1 Classifiers as partitions
+
+The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in.
+Then the book describe 3 examples. The first one is the analysis of a complex chemical compound by analysis its mass spectra. Measurement is contains one or more chlorine atoms or not. The second example is the days in the Los Angeles. The class is the ozone level(low,moderate or high). Measurement involve temperature, humidity and others. The third example is heart attack study. Measurement X is a 19-dimensional space with age, blood presure,.etc.
+
+Then here is the definition of a classifier:
+Def 1.1 A classifier or classification rule is a function d(x) defined on X so that for every x, d(x) is equal to one of the numbers 1,2,...,J. 
+
+That is map from sample space to the class space.
+Of course the classifier is not come from nothing, it comes from data. The problem is how to use data to construct a classifier. Then here gives some notation and term about the data.
+Learning sample(training set), is the data pair such like $(x_1,j_1)$, $x_1$ is the measurement of all kinds of data, $j_1$ is the indicator of class. This means such case with measurement is located in a class $j_1\in \{1,2,3....,N\}$.
+
+
+1.2 Purpose
+
+The general purpose of a classification study is either produce an accurate classifier or "uncover the prediction structure of the problem", which is, understanding how the variables or intersaction influence/drive the results.
+
+The tree structure model is one of the useful tool to develope a classifier.
+
+There are some interesting data sets which are hard to handle by the statistical method were designed for small data sets having standard structure with all variables of the same type.
+
+The features make a data sets interesting is 
+
+- large data sets involving many variables, more structure
+- High dimensionality: More variables than the number of data
+- A mixture of data types: Mixture ordered type and non-ordered type is hard to evaluate in a simple model
+- Nonstandard data structure
+
+"The curse of dimensionality" happens along with complex data sets. This makes the data set harder to analysis. In reponse to this increasing of dimensionality, more powerful statistical methods should be invented.
+
+1.3 Estimating accuracy
+
+This is a brief idea about how to assess a classifier.
+Given a classifier, a function d(x) from sample space $X$ to class space $j\in J=\{1,2,...,N\}$. Use $R^*(d)$ to denote the "True Misclassification rate". So the problem transfer to "What is true?" and "How to estimate the $R^*(d)$".
+
+- One way is test the classifier on subsequent cases wose correct classification has been observed.
+The idea is Using the training set $T$ to construct classifier d.Than draw another large set of cases from the same population that training set comes from. Compare the correct results with the result predicted by d. Then the proportion missclassified by d is $R^*(d)$.
+
+Definition: $(X,Y)$, $X\in \mathbf{X}$ is the variable space. $Y\in \mathbf{C}$ is the result of classification. a new sample from probability distribution $P(A,j)$. A is a subset of $X$,$A\subset X$.
+
+- $P(A,j)=P(X\in A,Y=j)$
+- $(X,Y)$ is independent of training set $T$.
+
+Then define
+$R^*(d)=P(d(X)\neq Y)$. or $R^*(d)=P(d(X)\neq Y|T)$
+
+That is, followed the idea upon. We find new samples from the relevant distribution, then use the classifier to find the incorrect proportion.
+Interpretation of $P(A,j)$ is that a case drawn at random from the relevant population has probability $P(A.j)$ that its measuremenr vector x is in A and its class is j. 
+
+-> Comment: This may is to formalize the "probability structure". A is construct as a data set to be cleared link with a probability(distribution).
+This is just complex definition of a distribution. To make it simple, it is same to say "Draw new samples from the same distribution as the population".
+
+The key point to this method is that the population distribution $P(A,j)$ is independent to the training sets $T$. These work are beginning definition of "truth".
+
+The problem we faced is that in actual problem, we only have data set T. We need this to train(construct) the classifier d and estimate $R^*(d)$. In this situation, we called the $R^*(d)$ as internal estimates.(Classification and Regression Trees, Leo Breiman .et.al). 
+
+-> Comment: In another book, we called it "training error", means the missclassification( or just error) made by the training set.
+
+The problem is, we use T to construct the d, then also use T to evaluate d, in some cases(most cases), this well overestimate the accuracy. 
+Some methods are designed to solve such difficulties. Splitting the data set to training (construct the d), validating (choose the best model from different constructor/algorithm/methods), and testing(estimate the model accuracy). Or use k-fold cross validation or bootstrap methods, these methods will mentioned in another post.
+
+SKIP the Bayes RULE part. (Include the definition of bayes rule:best over all classifier, Bayes misclassification rate: Bayes rule misclassification rate(because it is the best classifier, the rate is the minimum rate)).
+Followed the bayes idea, introduce the prior distribution and use prior + $P(A,j)$ to derive the bayes misclassification rate and bayes rule.
+
+Here is finish of Chap1. It briefly introduce the statistical model and formula. The problem we facing and general framework. Next chapter is beggining of the tree classification.
+
+
+
+
+###Chap2 Introduction to tree classification
+
+1-2 page: introduction a example about ship classification project. with some discussion.
+
+Problem: Reduction of dimensionality. Many of the information in any profile was redundant. Such as highly related variables.
+There is a new difficulty: each variable had dimensionality, from 1 to 15. Tree structured approach maybe suit this occasion.
+
+####2.2 Tree structured classifiers
+
+(How to draw a classification tree in R??)
+(Here just a simple example in rpart package)
+```{r}
+library(rpart)
+data(kyphosis)
+# grow tree 
+fit <- rpart(Kyphosis ~ Age + Number + Start,
+             method="class", data=kyphosis)
+#printcp(fit) # display the results 
+#plotcp(fit) # visualize cross-validation results 
+#summary(fit) # detailed summary of splits
+# plot tree 
+plot(fit, uniform=TRUE, 
+     main="Classification Tree for Kyphosis")
+text(fit, use.n=TRUE, all=TRUE, cex=.5)
+```
+![la lune](split tree.png "Tree structure."){#id .class width=300 height=200px}
+
+
+
+
+
+

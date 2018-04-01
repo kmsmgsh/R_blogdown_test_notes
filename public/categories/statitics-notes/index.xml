@@ -6,10 +6,30 @@
     <description>Recent content in Statitics Notes on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/statitics-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Regression and classification tree</title>
+      <link>/2018/03/30/regression-and-classification-tree/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/30/regression-and-classification-tree/</guid>
+      <description>###Chap1 The back ground.
+1.1 Classifiers as partitions
+The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in. Then the book describe 3 examples. The first one is the analysis of a complex chemical compound by analysis its mass spectra. Measurement is contains one or more chlorine atoms or not.</description>
+    </item>
+    
+    <item>
+      <title>Regression and classification tree</title>
+      <link>/2018/03/21/regression-and-classification-tree/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/21/regression-and-classification-tree/</guid>
+      <description>This is just to make the position. The downloaded version of the &amp;ldquo;Classification and Regression Trees&amp;rdquo; is very not clear. So I try to borrow one from university library. Then I will write some notes about this book here. This may not be fulfill very quick, but I hope so. Maybe this will be the first time to use the feature of r markdown, the package &amp;ldquo;rparts&amp;rdquo; description is implementing the algorithms in that book.</description>
+    </item>
     
     <item>
       <title>LDA some reviews</title>

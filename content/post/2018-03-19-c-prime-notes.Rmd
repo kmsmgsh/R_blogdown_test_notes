@@ -15,3 +15,7 @@ tags:
 Here is some thinking about the "basic" language, and generalization or simple. 
 It should in the using the c++, to print the results of the some calculation, like a array, how to simply print the content out?
 In more simpler language, just print(), it's okay. But if u directly print(or use cout) in c++, it will print address of the array. This is about how the language works and the basic rules? Maybe.
+This is also about the automate.
+
+
+
