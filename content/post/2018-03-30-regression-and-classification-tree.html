@@ -19,6 +19,7 @@ tags:
 
 
 
+<p>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)</p>
 <p>###Chap1 The back ground.</p>
 <p>1.1 Classifiers as partitions</p>
 <p>The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in.
@@ -71,7 +72,15 @@ Followed the bayes idea, introduce the prior distribution and use prior + <span 
 <p>Problem: Reduction of dimensionality. Many of the information in any profile was redundant. Such as highly related variables.
 There is a new difficulty: each variable had dimensionality, from 1 to 15. Tree structured approach maybe suit this occasion.</p>
 <p>####2.2 Tree structured classifiers</p>
-<p>(How to draw a classification tree in R??)
+<p>###1.1 Classifiers as partitions
+The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in.
+Then the book describe 3 examples. The first one is the analysis of a complex chemical compound by analysis its mass spectra. Measurement is contains one or more chlorine atoms or not. The second example is the days in the Los Angeles. The class is the ozone level(low,moderate or high). Measurement involve temperature, humidity and others. The third example is heart attack study. Measurement X is a 19-dimensional space with age, blood presure,.etc.</p>
+<p>Then here is the definition of a classifier:
+Def 1.1 A classifier or classification rule is a function d(x) defined on X so that for every x, d(x) is equal to one of the numbers 1,2,…,J.</p>
+<p>That is map from sample space to the class space.
+Of course the classifier is not come from nothing, it comes from data. The problem is how to use data to construct a classifier. Then here gives some notation and term about the data.
+Learning sample(training set), is the data pair such like <span class="math inline">\((x_1,j_1)\)</span>, <span class="math inline">\(x_1\)</span> is the measurement of all kinds of data, <span class="math inline">\(j_1\)</span> is the indicator of class. This means such case with measurement is located in a class <span class="math inline">\(j_1\in \{1,2,3....,N\}\)</span>
+(How to draw a classification tree in R??)
 (Here just a simple example in rpart package)</p>
 <pre class="r"><code>library(rpart)
 data(kyphosis)
@@ -87,5 +96,80 @@ plot(fit, uniform=TRUE,
 text(fit, use.n=TRUE, all=TRUE, cex=.5)</code></pre>
 <p><img src="/rmarkdown-libs/figure-html4/unnamed-chunk-1-1.png" width="672" />
 <img src="../../static/img/splitTree.png" title="Tree structure." alt="Tree structure" id="id" class="class" width="300" height="200" />
-<img src="/splitTree.png" title="tree" alt="Tree structure" id="id" class="class" width="300" height="200" /></p>
-<p>(Seems this picture cannot be showed, weird).</p>
+(Seems this picture cannot be showed, weird).</p>
+<div class="figure">
+<img src="/splitTree.png" title="tree" alt="Tree structure" id="id" class="class" width="300" height="200" />
+<p class="caption">Tree structure</p>
+</div>
+<p>(This works,so strange).
+(But why not work under the directory /img?)</p>
+<p>Here is the tree structure.
+The leaf nodes, whose subsets are not split, in this case showed upon are <span class="math inline">\(X_8,X_{14},X_{15},X_{10},,X_{11},X_{12},X_{16},X_{17}\)</span>, called terminal nodes.
+We can designate each terminal nodes, or leaf nodes, a class label(or regression value for regression tree). The tree classifier works in this way, from the root nodes, we have observation x. It is determined whether x goes to split left or right by the value of x and how the split is defined. Repeat this procedure until x go to terminal nodes.Than we can predict the x corresponds to the class label be assigned to the termnal nodes.</p>
+<p>Problem: How to use training set <span class="math inline">\(T\)</span> to determine the splits, terminal nodes and assignments (class label.).</p>
+<div id="construction-of-the-tree-classifier." class="section level4">
+<h4>Construction of the tree classifier.</h4>
+<p>Let us answer the first problem that how to use training set <span class="math inline">\(T\)</span> to determine the binary split of root into smaller and smaller pieces. The fundmental idea is to select each split of a subset so that the data in each of the descendant subsets are “purer” than the parent nodes.</p>
+<p>-&gt;Comment: This idea is something like non-supervised methods, the splitting part seems not involve the respond variable, class label. The assignning procedure is after the tree construction procedure.</p>
+<p>First,in the six-class case,using <span class="math inline">\(p_1,...p_6\)</span> to denote the proportions of class 1,….,6 profiles in any nodes. Without any prior information, in the root nodes <span class="math inline">\(t_1\)</span>,<span class="math inline">\((p_1,p_2,...,p_6)=(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6})\)</span>.</p>
+<p>A good split of <span class="math inline">\(t_1\)</span> can be one that separates the profiles in <span class="math inline">\(T\)</span> so that all profiles in classes 1,2,3 go to the left node and the profiles in 4,5,6 go to the right.</p>
+<div class="figure">
+<img src="/FirstSplit.png" alt="First split" id="id" class="class" width="300" height="200" />
+<p class="caption">First split</p>
+</div>
+<p>Once a good split of <span class="math inline">\(t_1\)</span> is found, we can use same method to find a good split of <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_3\)</span>.</p>
+<p>This kind of split means, (if we can find such kind of split)the left side only contains class 1,2,3 and right only contains 4,5,6. Both left side and right side is “purer”. Then we can do a search over all kinds of splits, then the measurement of how goodness of split is by how pure it is. Then just choose the split which minimize the “pure”.</p>
+<p>Now the problem turns to how to define a quantity about the measurement of “pure”.</p>
+<p>We use <span class="math inline">\(\phi\)</span> to denote the impurity function.
+Then the function should follow that, for 6 class example, <span class="math inline">\(\phi(\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6},\frac{1}{6})=maximum\)</span> . Because when in this case, the node can contain points from all kinds of classes, it is chaos, not pure at all.
+<span class="math inline">\(\phi(I_i)\)</span>=0, <span class="math inline">\(I_i=(0,.,1,.,0)\)</span>, i-position is 1 and other is 0.
+In this case, the node only contains points from a single class, it is pure, so the measurement of impurity get minimum to 0.</p>
+<p>Once we defined the impurity measurement, we can use this measurement to define the goodness of the split.
+The goal of a split is decrease the impurity of a node. Intuitively, the decrease in impurity can be the goodness of the split as
+<span class="math display">\[
+\bigtriangleup i(s,t)=i(t)-p_Li(t_L)-p_Ri(t_R)
+\]</span>
+<span class="math inline">\(s\)</span> is a candidate split, <span class="math inline">\(t_L\)</span> is the left son node, <span class="math inline">\(t_R\)</span> is the right son node. <span class="math inline">\(p_L\)</span> is the proportion of points(cases, observations) from t go into <span class="math inline">\(t_L\)</span>, the same for <span class="math inline">\(p_R\)</span>. This descend of impurity can be viewed as difference of impurity between parent nodes with weighted average of impurity for son nodes.</p>
+<p>Then we can develop a workflow as below</p>
+<p>-1 Define the node proportions <span class="math inline">\(p(j|t)\)</span>,j=1,…,6, to be the proportion of the cases <span class="math inline">\(x_n\in t\)</span> belongs to class j. s.t.
+<span class="math display">\[
+p(1|t)+...+p(6|t)=1
+\]</span>
+-2 Define a measure i(t) of the impurity of nodes t as a nonnegative function <span class="math inline">\(\phi\)</span> of <span class="math inline">\(p(1|t),...,p(6|t)\)</span>.</p>
+<p>-&gt; Comment: <span class="math inline">\(p(1|t),...,p(6|t)\)</span> contain the information about t, so the <span class="math inline">\(\phi\)</span> is a function directly by <span class="math inline">\(p(j|t)\)</span>, and indirectly by <span class="math inline">\(t\)</span>.</p>
+<p>-3 Define a candidate set S of binary splits s at each node.</p>
+<p>The 3 part can be viewed as the partition lines of the feature space.</p>
+<div class="figure">
+<img src="/PartitionTree.png" alt="First split" id="id" class="class" width="300" height="200" />
+<p class="caption">First split</p>
+</div>
+<p>The every cross lane in each axes is a partition of the sample space.</p>
+<p>So the candidate partition is the every point in horse power axis or the whellbase axis(as the figure example).
+This structure is not that like a tree structure, but actually it’s equivelant. We can use “Questions” structures to transfer these two structure.</p>
+<p>For example, the basic format of questions is “Is <span class="math inline">\(x\in A\)</span>?”, to the partition of the picture is “Is Horse power great than 0.6?”, then a candidate question can lead a candidate split. Anser “Yes” to <span class="math inline">\(t_L\)</span> and all <span class="math inline">\(x_n\)</span> in t answer “No” to <span class="math inline">\(t_R\)</span>.</p>
+<p>A exist impurity measurement be defined as
+<span class="math display">\[
+i(t)=-\sum ^6 _{j=1} p(j|t) log p(j|t)
+\]</span>
+Of course this is not the only definition of impurity, other can be prefable for the real projects.</p>
+<p>A question set S, is with the form:</p>
+<p>“Is the watermelon’s weight located in the interval [a,b], where <span class="math inline">\(a\leqslant b\)</span> and a,b range from 0 to 10 in steps of 0.1?”
+Then we construct a set questions. One question inside the question set is “Is the watermelon’s weight in the interval 3.1 kg to 5 kg?”, just change a and b we can travel all the candidate questions. It gives total <span class="math inline">\(\frac{100\times101}{2}\simeq 5000\)</span> questions.</p>
+<p>After we construct a question set S, we can search a best question from the question set as the split in current node.</p>
+<p>So we can conclude the tree grown method:
+At the root node <span class="math inline">\(t_1\)</span>, a search was made through all candidate splits from construct question set S to find that a split <span class="math inline">\(s^*\)</span> which gave the largest decrease in impurity; i.e.,
+<span class="math display">\[
+\bigtriangleup i(s^*,t_1)=\mathit{max}_{s\in S} \bigtriangleup i (s,t_1)
+\]</span>
+Then the root node was split into <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_3\)</span> using the split <span class="math inline">\(s\)</span>.</p>
+<p>Repeat the same search procedure for <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_3\)</span> separately to construct the tree.</p>
+<p>Another problem rising here. When the procedure stop? Intuitively, like the newton raphson method in numeric analysis, when the procedure not bring significant income, it’s the time to stop it. Translate to the tree built way, when a node t cannot find a split s that sigfinicant decrease the impurity, then node t was not split and became a terminal node.
+That is,
+<span class="math display">\[
+p(j_0|t)=max_jp(j|t)
+\]</span>
+Then, t was designated as a class <span class="math inline">\(j_0\)</span> terminal node.</p>
+</div>
+<div id="initial-tree-growing-methodology" class="section level4">
+<h4>2.4 Initial Tree Growing methodology</h4>
+</div>

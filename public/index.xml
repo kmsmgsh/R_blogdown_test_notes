@@ -17,9 +17,10 @@
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/03/30/regression-and-classification-tree/</guid>
-      <description>###Chap1 The back ground.
+      <description>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)
+###Chap1 The back ground.
 1.1 Classifiers as partitions
-The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in. Then the book describe 3 examples. The first one is the analysis of a complex chemical compound by analysis its mass spectra. Measurement is contains one or more chlorine atoms or not.</description>
+The classification problem is with a long history and real world background, such as the medical diagnosis problem. We make some measurements on some case or object then predict which class the case is in. Then the book describe 3 examples. The first one is the analysis of a complex chemical compound by analysis its mass spectra.</description>
     </item>
     
     <item>
