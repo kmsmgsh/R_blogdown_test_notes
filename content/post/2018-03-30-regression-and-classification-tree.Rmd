@@ -118,7 +118,8 @@ plot(fit, uniform=TRUE,
      main="Classification Tree for Kyphosis")
 text(fit, use.n=TRUE, all=TRUE, cex=.5)
 ```
-![la lune](split tree.png "Tree structure."){#id .class width=300 height=200px}
+![Tree structure](img/split tree.png "Tree structure."){#id .class width=300 height=200px}
+(Seems this picture cannot be showed, weird).
 
 
 
