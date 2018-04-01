@@ -143,10 +143,10 @@ p(1|t)+...+p(6|t)=1
 <img src="/PartitionTree.png" alt="First split" id="id" class="class" width="300" height="200" />
 <p class="caption">First split</p>
 </div>
-<p>The every cross lane in each axes is a partition of the sample space.</p>
-<p>So the candidate partition is the every point in horse power axis or the whellbase axis(as the figure example).
-This structure is not that like a tree structure, but actually it’s equivelant. We can use “Questions” structures to transfer these two structure.</p>
-<p>For example, the basic format of questions is “Is <span class="math inline">\(x\in A\)</span>?”, to the partition of the picture is “Is Horse power great than 0.6?”, then a candidate question can lead a candidate split. Anser “Yes” to <span class="math inline">\(t_L\)</span> and all <span class="math inline">\(x_n\)</span> in t answer “No” to <span class="math inline">\(t_R\)</span>.</p>
+<p>Every cross lane parallel to each axe is a partition of the sample space.</p>
+<p>So the candidate partition can be viewed as every point in horse power axis or the whellbase axis(in the figure example).
+This structure is not like a tree structure,it more like how to partition the geometric, but actually it’s equivelant. We can use “Questions” structures to make binary split equivelant to the geometric partition.</p>
+<p>For example, the basic format of questions is “Is <span class="math inline">\(x\in A\)</span>?”, to the partition of the picture is “Is Horse power great than 0.6?”, then a candidate question can lead a candidate split. Anser “Yes” to <span class="math inline">\(t_L\)</span> and all <span class="math inline">\(x_n\)</span> in t answer “No” to <span class="math inline">\(t_R\)</span>. The boundary of A is the geometric partition curve of the previous graph structure.</p>
 <p>A exist impurity measurement be defined as
 <span class="math display">\[
 i(t)=-\sum ^6 _{j=1} p(j|t) log p(j|t)
