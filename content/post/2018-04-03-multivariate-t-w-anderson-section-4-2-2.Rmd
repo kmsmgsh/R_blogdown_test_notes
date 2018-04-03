@@ -1,0 +1,97 @@
+---
+title: Multivariate，T.W. Anderson, Section 4.2.2
+author: Jiaming
+date: '2018-04-03'
+slug: multivariate-t-w-anderson-section-4-2-2
+categories:
+  - Mathematics
+  - multivariable
+  - Statistics
+  - statitics notes
+tags:
+  - mathematics
+  - Multivariable analysis
+  - statistics, linear model, regression, covariance
+---
+Copy the book.
+e-version(rather than pen version---> can't be used by search tools (ctrl+f)).
+
+##### goal: find the distribution of the sample correlation coefficient when the population coefficient is different from zero.(The case is zero discussed in the previous chapter, and derive the distribution, construct the hypothesis test based on the distribution)
+
+First thing we should do is derive the joint density of $a_{11},a_{12},a_{22}$.
+In previous section, we saw that conditional on $v_1$ held fixed, the random variable $b=\frac{a_{12}}{a_{11}}$ and $U/\sigma^2=(a_{22}-a^2_{12}/a_{11})/\sigma^2$ are distributed independently according to $N(\beta,\sigma^2/c^2)$ and the $\chi^2$ distribution with $n-1$ degrees of freedom, respectively. 
+
+Remember the previous section. The correlation coefficients are the cosine of the angle by two variable $v_2$ and $bv_1$. What is $v_1,v_2$? This would back to the  definition of the covariance coeeficient $a_{ij}$.
+
+Definition: Sample correlation coefficient $a_{ij}$:
+$$
+a_{ij}=\sum ^N _{\alpha=1} (x_{i\alpha}-\overline x_i)(x_{j\alpha}-\overline x_j)
+$$
+This can be demonstrated by 
+$$
+a_{ij}=\sum ^n _{\alpha=1} z_{i\alpha}z_{j\alpha}
+$$
+where n=N-1, 
+$$
+\begin{eqnarray*}
+\begin{pmatrix}
+z_{1\alpha}\\
+z_{2\alpha}\\
+\end{pmatrix} & \sim & N\left[\left(\begin{array}{c}
+0\\
+0\\
+\end{array}\right),\left(\begin{array}{cc}
+\sigma_1^2 & \sigma_1\sigma_2\rho \\
+\sigma_2\sigma_1\rho & \sigma_2^2 \\
+\end{array}\right)\right]\\
+\end{eqnarray*}
+$$
+$z$ is orthogonal linear transform of the $X$, which is $Z=BX$, B is an $N\times N$ orhogonal matrix with the last row equals to $(1/\sqrt{(N)},....,1/\sqrt{(N)})$. This transformation can make Z is nearly same as X but the last row $Z_N=\sqrt{N}\overline X$, which makes the matrix A follows that
+$$
+A=\sum _{\alpha=1} ^N X_\alpha X_{\alpha}'-N\overline X\overline X'= \sum _{\alpha=1} ^N Z_\alpha Z_{\alpha}'-Z_NZ'_N=\sum _{\alpha=1} ^{N-1} Z_\alpha Z_{\alpha}'
+$$
+The form of A looks like the sample covariance matrix?
+Here is my attempt
+$$
+\sum _\alpha (X_\alpha-\overline X)'(X_\alpha-\overline X)\\
+=\sum_\alpha (X_\alpha'X_\alpha-X'_\alpha\overline X-\overline X'X_\alpha+\overline X'\overline X)\\
+=\sum_\alpha X_\alpha'X_\alpha-N\overline X'\overline X\\
+=A
+$$
+So the transform makes the formula simple like the minus $\overline x$ term is not exist, just two $z$ times together.
+
+Okay, back the the $v$,$v_i=(z_{i1},...,z_{in})',i=1,2.$ Then, let $b=v'_2v_1/v_1'v_1$, then $v_2-bv_1$ is orthogonal to $v_1$ and then we can got the information of the angle $\theta$ with $cot\ \theta=\frac{b||v_1||}{||v_2-bv_1||}$. After b, then it's $U$.
+Original $U$ is 
+$$
+U=(V_2-bv_1)'(V_2-bv_1)=V_2'V_2-b^2v'_1v_1=a_{22}-a_{12}^2/a_{11}\\ =\sum _{\alpha=1}^n Z_{2\alpha}^2-b^2\sum_{\alpha=1}^n z^2_{1\alpha}=\sum_{\alpha=1}^nY_\alpha^2-Y_1^2=\sum_{\alpha}^n Y_\alpha^2 
+$$
+Which is independent of b. U is constructed by the definition of $cot\ \theta$, the denominator $||v_2-bv_1||$. Then the $cot\ \theta=b\sqrt{a_{11}/U}$. The construction of Y is similar to $Z$, to make the formula simpler. Then Y followed normal distribution, then the sum square of normal distribution is $\chi^2$ distribution. So get the result that $U/\sigma^2$ has a $\chi^2$ distribution with df is $n-1$.
+
+
+Then we finish describing the things provided by previous section. Back to our original points.
+The distribution of $b$ and $U/\sigma^2$. 
+Denoting the density of the $\chi^2$ by $g_{n-1}(u)$, then we write the conditional density of b and U as $n(b|\beta,\sigma^2/a_{11})g_{n-1}(u/\sigma^2)/\sigma^2$. The joint density of $V_1,b,U$ is $n(v_1|0,\sigma_1^2I)n(b|\beta,\sigma^2/a_{11})g_{n-1}(u/\sigma^2)/\sigma^2$. The marginal density of $V_1'V_1/\sigma_1^2=a_{11}/\sigma_1^2$ is $g_n(u)$; that is the density of $a_{11}$ is 
+$$
+\frac{1}{\sigma^2_1} g_n(\frac{a_{11}}{\sigma^2_1})=\operatorname*{\int\dots\int}_{v_1'v_1=a_{11}} n(v_1|0,\sigma_1^2I)dW
+$$
+where dW is the proper volume element.
+
+
+Then after tons of proof that can't understand, it derive the distribution (from the joint distribution)
+Theorem 4.2.2 The correlation coefficient in a sample of N from a bivariate normal distribution with correlation $\rho$ is distributed with density
+$$\frac{2^{n-2}(1-\rho^2)^{\frac{1}{2}n}(1-r^2)^{\frac{1}{2}(n-3)}}{(n-2)!\pi}\sum_{\alpha=0}^\infty \frac{(2\rho r)^{\alpha}}{\alpha!}\Gamma^2[\frac{1}{2}(n+\alpha)]$$
+where $n=N-1$
+
+Back to the can't understand proof to find some useful information.
+
+First is r. Found in page 124. This is the guidd light in the maze of proof.
+"We want to find the density of"
+$$
+r=\frac{a_{12}}{\sqrt{a_{11}a_{22}}}=\frac{a_{12}/(\sigma_1\sigma_2)}{\sqrt{(a_{11}/\sigma_1^2)(a_{22}/\sigma_2^2)}}=\frac{a^*_{12}}{\sqrt{a^*_{11}a_{22}^*}}
+$$
+Then the density of r give in the theorem.
+
+つつく
+
+
+
