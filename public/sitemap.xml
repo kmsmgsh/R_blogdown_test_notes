@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</loc>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/03/30/regression-and-classification-tree/</loc>
     <lastmod>2018-03-30T00:00:00+00:00</lastmod>
   </url>
@@ -52,7 +57,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +99,13 @@
   
   <url>
     <loc>/tags/mathematics/</loc>
-    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/mathematics/</loc>
-    <lastmod>2018-03-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -118,13 +123,13 @@
   
   <url>
     <loc>/categories/multivariable/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/multivariable-analysis/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -136,7 +141,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,19 +183,19 @@
   
   <url>
     <loc>/categories/statistics/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/statistics-linear-model-regression-covariance/</loc>
-    <lastmod>2018-03-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/statitics-notes/</loc>
-    <lastmod>2018-03-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-04-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

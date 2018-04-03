@@ -6,10 +6,20 @@
     <description>Recent content in Posts on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Multivariate，T.W. Anderson, Section 4.2.2</title>
+      <link>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
+      <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
+      <description>Copy the book. e-version(rather than pen version—&amp;gt; can’t be used by search tools (ctrl+f)).
+goal: find the distribution of the sample correlation coefficient when the population coefficient is different from zero.(The case is zero discussed in the previous chapter, and derive the distribution, construct the hypothesis test based on the distribution) First thing we should do is derive the joint density of \(a_{11},a_{12},a_{22}\). In previous section, we saw that conditional on \(v_1\) held fixed, the random variable \(b=\frac{a_{12}}{a_{11}}\) and \(U/\sigma^2=(a_{22}-a^2_{12}/a_{11})/\sigma^2\) are distributed independently according to \(N(\beta,\sigma^2/c^2)\) and the \(\chi^2\) distribution with \(n-1\) degrees of freedom, respectively.</description>
+    </item>
     
     <item>
       <title>Regression and classification tree</title>
