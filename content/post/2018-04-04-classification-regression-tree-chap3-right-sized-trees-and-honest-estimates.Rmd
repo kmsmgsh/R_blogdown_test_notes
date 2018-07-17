@@ -1,0 +1,71 @@
+---
+title: Classification & Regression Tree Chap3 Right sized trees and honest estimates
+author: Jiaming
+date: '2018-04-04'
+slug: classification-regression-tree-chap3-right-sized-trees-and-honest-estimates
+categories:
+  - Statistics
+  - statitics notes
+tags:
+  - decision tree
+  - Multivariable analysis
+  - statistics, linear model, regression, covariance
+---
+
+###### Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone "Classification and regression trees".
+
+##### Notes for Chap3 Right sized trees and honest estimates.
+
+#### 3.1 INTRODUCTION
+
+
+
+Main concerntration: 
+
+- 1.Getting the right sized tree T 
+- 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost $R^*(T)$ 
+If only use resubstitute data into the constructed tree to estimate the $R(T)$,it would be downward. (Because use the data to constuct the tree and use the same data to evaluate tree.)
+
+If each terminal node only contains one data case(Like 1-NN), then resubstitution estimate of $R(T)$ is 0, but true value is ofc not. 
+Then the validated tree which is choosen by this underestimated $R(T)$ can hardly with predictive power when tested in another samples dran from the same population distribution.
+p.s. More familiar notation is $err(\tau)$, the training error, is same meaning with the $R(T)$.
+
+
+Too large a tree will have a higher true misclassification rate than the right sized tree.
+Too small a tree will not use some of the classification information available in $T$, again resulting in a higher true misclassification rate than the right sized tree.
+
+Showed in talbe that 
+1. Training error always decrease when terminal nodes increasing.
+2. $R^{TS}$ increase initially decreasing in size when size of tree decrease and hit the minimum in 10, than begins to climb again when the trees get too small.
+
+So the key point is which the splits were "informative". That means, finding appropriate stopping rules.
+
+Recall one of the early stopping rule is about the impurity
+$$
+\operatorname*{\max}_s \triangle I(s,t)<\beta
+$$
+If the $\beta$ is set too low, then there is too much splitting and the tree is too large. Increasing $\beta$ to some threshold also leads to some difficulties. It's hard to find a proper threshold. There may be node t is not that good split, but the split in t to $t_L,t_R$ may have splits with large decreases in impurity. 
+Finally, looking for a more satisfactory procedure was found that consisted of two key elements:
+
+1. Prune instead of stopping. Grow a tree that is much too large and prune it upward in the "right way" until you finally cut back to the root node. (This can avoid the situation mentioned before, just not cut the split with significant decreasing)
+
+2. Use more accurate estimates of $R^*(T)$ to select the right sized tree from among the pruned subtrees.
+
+
+Two immediate questions rised in this new framework.
+
+- How does one prune upward in the "right way"
+- How can better estimates of $R^*(T)$ be gotten.
+
+These two questions will be discussed in 3.2,3.3 ad 3.4.
+
+#### 3.2 GETTING READY TO PRUNE
+$$
+\begin{align}
+R(T)&=\sum_{t\in \tilde{T}}r(t)p(t)\\
+&=\sum_{t\in \tilde{T}} R(t).
+\end{align}
+$$
+Refer $R(T)$ and $R(t)$ as the tree and node misclassification costs.
+
+

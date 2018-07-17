@@ -1,0 +1,14 @@
+---
+title: covariance matrix research notes
+author: Jiaming
+date: '2018-07-17'
+slug: covariance-matrix-research-notes
+categories:
+  - Statistics
+  - statitics notes
+  - multivariable
+tags:
+  - statistics, linear model, regression, covariance
+  - covariance matrix
+  - Matrix decomposition
+---
