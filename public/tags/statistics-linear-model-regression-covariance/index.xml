@@ -6,10 +6,33 @@
     <description>Recent content in Statistics Linear Model Regression Covariance on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/statistics-linear-model-regression-covariance/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Covariance research notes</title>
+      <link>/2018/07/17/covariance-research-notes/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/07/17/covariance-research-notes/</guid>
+      <description>This research has done by Hastie (2017) . Actually not, this just a test about the citation in Rmarkdown.
+Now let’s begin.
+The origin of such research is by Pourahmadi (1999). Such decomposition is very useful and full of statistical meaning of the result of reparameterization.
+Other part of the research see the annual report. Here is about the related research maybe.
+Google search key word is the paper that cited Pourahmadi (1999).</description>
+    </item>
+    
+    <item>
+      <title>Classification &amp; Regression Tree Chap3 Right sized trees and honest estimates</title>
+      <link>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
+      <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
+      <description>Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone “Classification and regression trees”.  Notes for Chap3 Right sized trees and honest estimates.  3.1 INTRODUCTION Main concerntration:
+ 1.Getting the right sized tree T 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost \(R^*(T)\) If only use resubstitute data into the constructed tree to estimate the \(R(T)\),it would be downward.</description>
+    </item>
     
     <item>
       <title>Multivariate，T.W. Anderson, Section 4.2.2</title>

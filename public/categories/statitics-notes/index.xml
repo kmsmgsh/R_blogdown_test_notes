@@ -6,10 +6,20 @@
     <description>Recent content in Statitics Notes on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/statitics-notes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Classification &amp; Regression Tree Chap3 Right sized trees and honest estimates</title>
+      <link>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
+      <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
+      <description>Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone “Classification and regression trees”.  Notes for Chap3 Right sized trees and honest estimates.  3.1 INTRODUCTION Main concerntration:
+ 1.Getting the right sized tree T 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost \(R^*(T)\) If only use resubstitute data into the constructed tree to estimate the \(R(T)\),it would be downward.</description>
+    </item>
     
     <item>
       <title>Multivariate，T.W. Anderson, Section 4.2.2</title>
