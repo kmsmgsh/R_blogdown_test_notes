@@ -1,0 +1,52 @@
+---
+title: Covariance research notes
+author: Jiaming
+date: '2018-07-17'
+slug: covariance-research-notes
+bibliography: Bibliography.bib
+categories:
+  - Statistics
+tags:
+  - matrix
+  - Multivariable analysis
+  - statistics, linear model, regression, covariance
+  - covariance matrix
+---
+
+This research has done by @hastie2017generalized .
+Actually not, this just a test about the citation in Rmarkdown.
+
+Now let's begin.
+
+The origin of such research is by @pourahmadi1999joint. Such decomposition is very useful and full of statistical meaning of the result of reparameterization. 
+
+Other part of the research see the annual report. Here is about the related research maybe.
+
+Google search key word is the paper that cited @pourahmadi1999joint. And select the recent research (maybe later than 2014?) with good journal.
+
+This essay might be interesting [@zwiernik2017maximum]. From its title " linear Gaussian covariance models", there is a thing should be mentioned.The first is what is the gaussian covariance model, what the link between this model with the T.W. Anderson's linear modelling about the covariance models. The second thing is that it's 2017 paper, so why it is so new.
+
+Then let's move to the abstract and introduction part.
+
+Summary part: It seems like the model is not that simple. The MLE for this class of problem is a non-convex optimization problem? The work is based on some asymptotically distribution. Then this work prove under certain condition, this problem is asymptotically convex.
+Not quite understand because I don't understand what is such kind of model. Move to next part.
+
+Pourhamadi 2011 is a review of covariance estimation problem.???
+Need to check.
+
+Okay find it @pourahmadi2011covariance. Now it's a break point for @zwiernik2017maximum, let's move to @pourahmadi2011covariance.
+
+From the abstract part, it said somethinga bout the high dimensional issue and GLM fitting issue, sparse estimation and graphic model issues, not quite understand. But after that, it comes to mention the Cholesky Decomposition, Spectral Decomposition and the Variance-Covariance Decomposition, which is three parameterisation method in previous research.
+
+It's a big introduction part with good literature review I think? should mark and read sometimes later. This is section1 and 2 for the previous methods. The next part is the regularization method, not quite understand, mark here.
+Section 4 is an isolated Bayesian part, about the prior and other issues. The 4.4 is about autocorrelation model should be noted.
+
+Break point back.
+
+
+
+
+
+
+
+
