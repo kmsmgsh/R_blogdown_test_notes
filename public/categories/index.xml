@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on A Hugo website</title>
+    <title>Categories on Hugo Ivy</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on A Hugo website</description>
+    <description>Recent content in Categories on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Mar 2018 00:00:00 +0000</lastBuildDate>
@@ -21,11 +21,20 @@
     </item>
     
     <item>
-      <title>Decision Trees</title>
+      <title>Decision trees</title>
       <link>/categories/decision-trees/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/decision-trees/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example</title>
+      <link>/categories/example/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/example/</guid>
       <description></description>
     </item>
     
@@ -84,7 +93,7 @@
     </item>
     
     <item>
-      <title>Statitics Notes</title>
+      <title>Statitics notes</title>
       <link>/categories/statitics-notes/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       

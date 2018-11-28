@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on A Hugo website</title>
+    <title>Tags on Hugo Ivy</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on A Hugo website</description>
+    <description>Recent content in Tags on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Mar 2018 00:00:00 +0000</lastBuildDate>
@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>Covariance Matrix</title>
+      <title>Covariance matrix</title>
       <link>/tags/covariance-matrix/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -30,7 +30,7 @@
     </item>
     
     <item>
-      <title>Decision Tree</title>
+      <title>Decision tree</title>
       <link>/tags/decision-tree/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       
@@ -66,7 +66,7 @@
     </item>
     
     <item>
-      <title>Multivariable Analysis</title>
+      <title>Multivariable analysis</title>
       <link>/tags/multivariable-analysis/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -120,7 +120,7 @@
     </item>
     
     <item>
-      <title>Statistics Linear Model Regression Covariance</title>
+      <title>Statistics, linear model, regression, covariance</title>
       <link>/tags/statistics-linear-model-regression-covariance/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -143,6 +143,15 @@
       <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/trick/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>/tags/tutorial/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tutorial/</guid>
       <description></description>
     </item>
     

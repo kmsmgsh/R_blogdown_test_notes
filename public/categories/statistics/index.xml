@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistics on A Hugo website</title>
+    <title>Statistics on Hugo Ivy</title>
     <link>/categories/statistics/</link>
-    <description>Recent content in Statistics on A Hugo website</description>
+    <description>Recent content in Statistics on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Covariance research notes</title>
-      <link>/2018/07/17/covariance-research-notes/</link>
+      <link>/post/2018/07/17/covariance-research-notes/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/07/17/covariance-research-notes/</guid>
+      <guid>/post/2018/07/17/covariance-research-notes/</guid>
       <description>This research has done by Hastie (2017) . Actually not, this just a test about the citation in Rmarkdown.
 Now let’s begin.
 The origin of such research is by Pourahmadi (1999). Such decomposition is very useful and full of statistical meaning of the result of reparameterization.
@@ -26,30 +26,30 @@ Google search key word is the paper that cited Pourahmadi (1999).</description>
     
     <item>
       <title>Classification &amp; Regression Tree Chap3 Right sized trees and honest estimates</title>
-      <link>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
+      <link>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
+      <guid>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
       <description>Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone “Classification and regression trees”.  Notes for Chap3 Right sized trees and honest estimates.  3.1 INTRODUCTION Main concerntration:
  1.Getting the right sized tree T 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost \(R^*(T)\) If only use resubstitute data into the constructed tree to estimate the \(R(T)\),it would be downward.</description>
     </item>
     
     <item>
       <title>Multivariate，T.W. Anderson, Section 4.2.2</title>
-      <link>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
+      <link>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
       <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
+      <guid>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
       <description>Copy the book. e-version(rather than pen version—&amp;gt; can’t be used by search tools (ctrl+f)).
 goal: find the distribution of the sample correlation coefficient when the population coefficient is different from zero.(The case is zero discussed in the previous chapter, and derive the distribution, construct the hypothesis test based on the distribution) First thing we should do is derive the joint density of \(a_{11},a_{12},a_{22}\). In previous section, we saw that conditional on \(v_1\) held fixed, the random variable \(b=\frac{a_{12}}{a_{11}}\) and \(U/\sigma^2=(a_{22}-a^2_{12}/a_{11})/\sigma^2\) are distributed independently according to \(N(\beta,\sigma^2/c^2)\) and the \(\chi^2\) distribution with \(n-1\) degrees of freedom, respectively.</description>
     </item>
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/30/regression-and-classification-tree/</link>
+      <link>/post/2018/03/30/regression-and-classification-tree/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/30/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/30/regression-and-classification-tree/</guid>
       <description>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)
 ###Chap1 The back ground.
 1.1 Classifiers as partitions
@@ -58,19 +58,19 @@ The classification problem is with a long history and real world background, suc
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/21/regression-and-classification-tree/</link>
+      <link>/post/2018/03/21/regression-and-classification-tree/</link>
       <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/21/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/21/regression-and-classification-tree/</guid>
       <description>This is just to make the position. The downloaded version of the &amp;ldquo;Classification and Regression Trees&amp;rdquo; is very not clear. So I try to borrow one from university library. Then I will write some notes about this book here. This may not be fulfill very quick, but I hope so. Maybe this will be the first time to use the feature of r markdown, the package &amp;ldquo;rparts&amp;rdquo; description is implementing the algorithms in that book.</description>
     </item>
     
     <item>
       <title>Natural cubic spline for Non-parametric regression</title>
-      <link>/2018/02/19/nonparametric-regression/</link>
+      <link>/post/2018/02/19/nonparametric-regression/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/nonparametric-regression/</guid>
+      <guid>/post/2018/02/19/nonparametric-regression/</guid>
       <description>Here is the a new note about the non-parametric regression.
 Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve \(g\) is. An intuitively way is \(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\),the integrated squared second derivative.
 The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&amp;#39;&amp;#39;(x)^2\}dx\] So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.</description>

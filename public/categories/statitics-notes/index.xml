@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statitics Notes on A Hugo website</title>
+    <title>Statitics notes on Hugo Ivy</title>
     <link>/categories/statitics-notes/</link>
-    <description>Recent content in Statitics Notes on A Hugo website</description>
+    <description>Recent content in Statitics notes on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Apr 2018 00:00:00 +0000</lastBuildDate>
@@ -13,30 +13,30 @@
     
     <item>
       <title>Classification &amp; Regression Tree Chap3 Right sized trees and honest estimates</title>
-      <link>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
+      <link>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
+      <guid>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
       <description>Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone “Classification and regression trees”.  Notes for Chap3 Right sized trees and honest estimates.  3.1 INTRODUCTION Main concerntration:
  1.Getting the right sized tree T 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost \(R^*(T)\) If only use resubstitute data into the constructed tree to estimate the \(R(T)\),it would be downward.</description>
     </item>
     
     <item>
       <title>Multivariate，T.W. Anderson, Section 4.2.2</title>
-      <link>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
+      <link>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
       <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
+      <guid>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
       <description>Copy the book. e-version(rather than pen version—&amp;gt; can’t be used by search tools (ctrl+f)).
 goal: find the distribution of the sample correlation coefficient when the population coefficient is different from zero.(The case is zero discussed in the previous chapter, and derive the distribution, construct the hypothesis test based on the distribution) First thing we should do is derive the joint density of \(a_{11},a_{12},a_{22}\). In previous section, we saw that conditional on \(v_1\) held fixed, the random variable \(b=\frac{a_{12}}{a_{11}}\) and \(U/\sigma^2=(a_{22}-a^2_{12}/a_{11})/\sigma^2\) are distributed independently according to \(N(\beta,\sigma^2/c^2)\) and the \(\chi^2\) distribution with \(n-1\) degrees of freedom, respectively.</description>
     </item>
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/30/regression-and-classification-tree/</link>
+      <link>/post/2018/03/30/regression-and-classification-tree/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/30/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/30/regression-and-classification-tree/</guid>
       <description>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)
 ###Chap1 The back ground.
 1.1 Classifiers as partitions
@@ -45,19 +45,19 @@ The classification problem is with a long history and real world background, suc
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/21/regression-and-classification-tree/</link>
+      <link>/post/2018/03/21/regression-and-classification-tree/</link>
       <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/21/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/21/regression-and-classification-tree/</guid>
       <description>This is just to make the position. The downloaded version of the &amp;ldquo;Classification and Regression Trees&amp;rdquo; is very not clear. So I try to borrow one from university library. Then I will write some notes about this book here. This may not be fulfill very quick, but I hope so. Maybe this will be the first time to use the feature of r markdown, the package &amp;ldquo;rparts&amp;rdquo; description is implementing the algorithms in that book.</description>
     </item>
     
     <item>
       <title>LDA some reviews</title>
-      <link>/2018/02/27/lda-some-reviews/</link>
+      <link>/post/2018/02/27/lda-some-reviews/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/27/lda-some-reviews/</guid>
+      <guid>/post/2018/02/27/lda-some-reviews/</guid>
       <description>Random Intercept Model: \[ \begin{align} &amp;amp;Y_{ij}=\mu_{ij}+b_i+\epsilon_{ij}\\ &amp;amp;E_{ij}=\mu_{ij},b_i\sim N(0,\sigma_b^2),\epsilon_{ij}=N(0,\sigma^2_\epsilon) \end{align} \] The matrix form is \[ Y_i=\mu_i+1_{n_i}b_i+\epsilon_i \]
 Under this setting, the variance of \(Y_i\) is
 \[ \begin{align} Var(Y_i)&amp;amp;=Var(1_{n_i}b_i+\epsilon_i)\\ &amp;amp;=Var(1_{n_i}b_i)+Var(\epsilon_i)\\ &amp;amp;=\sigma_b^2J_{n_i}+\sigma_\epsilon^2I_{n_i}\\ &amp;amp;=(\sigma_b^2+\sigma^2_\epsilon)[(1-\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon})I_{n_i}+\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon}J_{n_i}]\\ &amp;amp;=\sigma^2[(1-\rho)I_{n_i}+\rho J_{n_i}] \end{align} \] Which is followed the compound symmetry(Uniform/Exchangeable correlation.) \[ \Sigma_i=\sigma^2\begin{bmatrix} 1 &amp;amp; \rho &amp;amp; \dots &amp;amp; \rho \\ \rho &amp;amp; 1 &amp;amp; \dots &amp;amp; \rho \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\ \rho &amp;amp; \rho &amp;amp; \dots &amp;amp; 1 \end{bmatrix}_{n_i\times n_i} \]</description>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo website</title>
+    <title>Home on Hugo Ivy</title>
     <link>/</link>
-    <description>Recent content on A Hugo website</description>
+    <description>Recent content in Home on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Covariance research notes</title>
-      <link>/2018/07/17/covariance-research-notes/</link>
+      <link>/post/2018/07/17/covariance-research-notes/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/07/17/covariance-research-notes/</guid>
+      <guid>/post/2018/07/17/covariance-research-notes/</guid>
       <description>This research has done by Hastie (2017) . Actually not, this just a test about the citation in Rmarkdown.
 Now let’s begin.
 The origin of such research is by Pourahmadi (1999). Such decomposition is very useful and full of statistical meaning of the result of reparameterization.
@@ -26,30 +26,30 @@ Google search key word is the paper that cited Pourahmadi (1999).</description>
     
     <item>
       <title>Classification &amp; Regression Tree Chap3 Right sized trees and honest estimates</title>
-      <link>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
+      <link>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</link>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
+      <guid>/post/2018/04/04/classification-regression-tree-chap3-right-sized-trees-and-honest-estimates/</guid>
       <description>Copy from Leo Breiman, Jerome H. Friedman, Richard A.Olshen, Charles J.Stone “Classification and regression trees”.  Notes for Chap3 Right sized trees and honest estimates.  3.1 INTRODUCTION Main concerntration:
  1.Getting the right sized tree T 2.Getting more accurate estimates of the true probability of misclassification or of the true expected missclassification cost \(R^*(T)\) If only use resubstitute data into the constructed tree to estimate the \(R(T)\),it would be downward.</description>
     </item>
     
     <item>
       <title>Multivariate，T.W. Anderson, Section 4.2.2</title>
-      <link>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
+      <link>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</link>
       <pubDate>Tue, 03 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
+      <guid>/post/2018/04/03/multivariate-t-w-anderson-section-4-2-2/</guid>
       <description>Copy the book. e-version(rather than pen version—&amp;gt; can’t be used by search tools (ctrl+f)).
 goal: find the distribution of the sample correlation coefficient when the population coefficient is different from zero.(The case is zero discussed in the previous chapter, and derive the distribution, construct the hypothesis test based on the distribution) First thing we should do is derive the joint density of \(a_{11},a_{12},a_{22}\). In previous section, we saw that conditional on \(v_1\) held fixed, the random variable \(b=\frac{a_{12}}{a_{11}}\) and \(U/\sigma^2=(a_{22}-a^2_{12}/a_{11})/\sigma^2\) are distributed independently according to \(N(\beta,\sigma^2/c^2)\) and the \(\chi^2\) distribution with \(n-1\) degrees of freedom, respectively.</description>
     </item>
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/30/regression-and-classification-tree/</link>
+      <link>/post/2018/03/30/regression-and-classification-tree/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/30/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/30/regression-and-classification-tree/</guid>
       <description>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)
 ###Chap1 The back ground.
 1.1 Classifiers as partitions
@@ -58,37 +58,37 @@ The classification problem is with a long history and real world background, suc
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/21/regression-and-classification-tree/</link>
+      <link>/post/2018/03/21/regression-and-classification-tree/</link>
       <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/21/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/21/regression-and-classification-tree/</guid>
       <description>This is just to make the position. The downloaded version of the &amp;ldquo;Classification and Regression Trees&amp;rdquo; is very not clear. So I try to borrow one from university library. Then I will write some notes about this book here. This may not be fulfill very quick, but I hope so. Maybe this will be the first time to use the feature of r markdown, the package &amp;ldquo;rparts&amp;rdquo; description is implementing the algorithms in that book.</description>
     </item>
     
     <item>
       <title>C&#43;&#43; prime notes</title>
-      <link>/2018/03/19/c-prime-notes/</link>
+      <link>/post/2018/03/19/c-prime-notes/</link>
       <pubDate>Mon, 19 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/19/c-prime-notes/</guid>
+      <guid>/post/2018/03/19/c-prime-notes/</guid>
       <description>Here is some thinking about the “basic” language, and generalization or simple. It should in the using the c++, to print the results of the some calculation, like a array, how to simply print the content out? In more simpler language, just print(), it’s okay. But if u directly print(or use cout) in c++, it will print address of the array. This is about how the language works and the basic rules?</description>
     </item>
     
     <item>
       <title>Useful Matrix trick </title>
-      <link>/2018/03/12/useful-matrix-trick/</link>
+      <link>/post/2018/03/12/useful-matrix-trick/</link>
       <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/12/useful-matrix-trick/</guid>
+      <guid>/post/2018/03/12/useful-matrix-trick/</guid>
       <description>This is found by Chapter “the multivariate Normal distribution”&amp;quot; by T.W. Anderson(1984),“An Introduction to Multivariate Analysis”.P18 (31). The \[ \begin{aligned} &amp;amp;E(DZE+F)\\ &amp;amp;=(\sum _{h,g} d_{ih}Z_{hg}e_{gj}+f_{ij})=\sum_{h,g}d_{ih}(EZ_{h,g})e_{gj}+f_{ij} \end{aligned} \] It may useful to mark \(DZE\) is \(\sum _{h,g} d_{ih}Z_{hg}e_{gj}\), maybe can make quadratic form more handleable.</description>
     </item>
     
     <item>
       <title>LDA some reviews</title>
-      <link>/2018/02/27/lda-some-reviews/</link>
+      <link>/post/2018/02/27/lda-some-reviews/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/27/lda-some-reviews/</guid>
+      <guid>/post/2018/02/27/lda-some-reviews/</guid>
       <description>Random Intercept Model: \[ \begin{align} &amp;amp;Y_{ij}=\mu_{ij}+b_i+\epsilon_{ij}\\ &amp;amp;E_{ij}=\mu_{ij},b_i\sim N(0,\sigma_b^2),\epsilon_{ij}=N(0,\sigma^2_\epsilon) \end{align} \] The matrix form is \[ Y_i=\mu_i+1_{n_i}b_i+\epsilon_i \]
 Under this setting, the variance of \(Y_i\) is
 \[ \begin{align} Var(Y_i)&amp;amp;=Var(1_{n_i}b_i+\epsilon_i)\\ &amp;amp;=Var(1_{n_i}b_i)+Var(\epsilon_i)\\ &amp;amp;=\sigma_b^2J_{n_i}+\sigma_\epsilon^2I_{n_i}\\ &amp;amp;=(\sigma_b^2+\sigma^2_\epsilon)[(1-\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon})I_{n_i}+\frac{\sigma^2_b}{\sigma_b^2+\sigma^2_\epsilon}J_{n_i}]\\ &amp;amp;=\sigma^2[(1-\rho)I_{n_i}+\rho J_{n_i}] \end{align} \] Which is followed the compound symmetry(Uniform/Exchangeable correlation.) \[ \Sigma_i=\sigma^2\begin{bmatrix} 1 &amp;amp; \rho &amp;amp; \dots &amp;amp; \rho \\ \rho &amp;amp; 1 &amp;amp; \dots &amp;amp; \rho \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\ \rho &amp;amp; \rho &amp;amp; \dots &amp;amp; 1 \end{bmatrix}_{n_i\times n_i} \]</description>
@@ -96,10 +96,10 @@ Under this setting, the variance of \(Y_i\) is
     
     <item>
       <title>Natural cubic spline for Non-parametric regression</title>
-      <link>/2018/02/19/nonparametric-regression/</link>
+      <link>/post/2018/02/19/nonparametric-regression/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/nonparametric-regression/</guid>
+      <guid>/post/2018/02/19/nonparametric-regression/</guid>
       <description>Here is the a new note about the non-parametric regression.
 Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve \(g\) is. An intuitively way is \(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\),the integrated squared second derivative.
 The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&amp;#39;&amp;#39;(x)^2\}dx\] So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.</description>
@@ -107,12 +107,41 @@ The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-
     
     <item>
       <title>Test R markdown function</title>
-      <link>/2018/02/19/test-r-markdown-function/</link>
+      <link>/post/2018/02/19/test-r-markdown-function/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/test-r-markdown-function/</guid>
+      <guid>/post/2018/02/19/test-r-markdown-function/</guid>
       <description>This is the first page by r markdown, and it is only a simple markdown now.
 1 + 1 # not executed </description>
+    </item>
+    
+    <item>
+      <title>About Hugo Ivy</title>
+      <link>/about-2/</link>
+      <pubDate>Sun, 06 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/about-2/</guid>
+      <description>This Hugo theme was ported from Ivy, a minimalist website generator built in Python. I don&amp;rsquo;t have time to document this theme. You have to read the source code to understand what it can do. All I can say for now is that I love it. It is clean, minimal, and responsive.
+I hope you will enjoy this theme. The source code is on Github. Happy hacking!</description>
+    </item>
+    
+    <item>
+      <title>Another Note on A blogdown Tutorial</title>
+      <link>/note/2017/06/14/another-note/</link>
+      <pubDate>Wed, 14 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/06/14/another-note/</guid>
+      <description>I just discovered an awesome tutorial on blogdown written by Alison. I have to admit this is the best blogdown tutorial I have seen so far.</description>
+    </item>
+    
+    <item>
+      <title>A Quick Note on Two Beautiful Websites</title>
+      <link>/note/2017/06/13/a-quick-note/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/06/13/a-quick-note/</guid>
+      <description>To me, the two most impressive websites based on blogdown are:
+ Rob J Hyndman&amp;rsquo;s personal website. Live Free or Dichotomize by Lucy and Nick et al.  I&amp;rsquo;m sure there will be more.</description>
     </item>
     
     <item>
@@ -136,10 +165,10 @@ And the web page is made by Jiaming Shen ()</description>
     
     <item>
       <title></title>
-      <link>/1/01/01/</link>
+      <link>/post/1/01/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/1/01/01/</guid>
+      <guid>/post/1/01/01/</guid>
       <description>Regression and classification tree /*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */ !function(a,b){&#34;object&#34;==typeof module&amp;&amp;&#34;object&#34;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&#34;jQuery requires a window with a document&#34;);return b(a)}:b(a)}(&#34;undefined&#34;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&#34;1.11.3&#34;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:&#34;&#34;,length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0a?b:0);return this.pushStack(c=0&amp;&amp;bc?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for(&#34;boolean&#34;==typeof g&amp;&amp;(j=g,g=arguments[h]||{},h++),&#34;object&#34;==typeof g||m.isFunction(g)||(g={}),h===i&amp;&amp;(g=this,h--);ih;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&amp;&amp;(j&amp;&amp;c&amp;&amp;(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&amp;&amp;m.isArray(a)?a:[]):f=a&amp;&amp;m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&amp;&amp;(g[d]=c));return g},m.extend({expando:&#34;jQuery&#34;+(l+Math.random()).replace(/\D/g,&#34;&#34;),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return&#34;function&#34;===m.type(a)},isArray:Array.isArray||function(a){return&#34;array&#34;===m.type(a)},isWindow:function(a){return null!=a&amp;&amp;a==a.window},isNumeric:function(a){return!m.isArray(a)&amp;&amp;a-parseFloat(a)+1=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||&#34;object&#34;!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&amp;&amp;!j.call(a,&#34;constructor&#34;)&amp;&amp;!j.call(a.constructor.prototype,&#34;isPrototypeOf&#34;))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+&#34;&#34;:&#34;object&#34;==typeof a||&#34;</description>
     </item>
     

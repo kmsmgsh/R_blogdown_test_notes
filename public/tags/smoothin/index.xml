@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Smoothin on A Hugo website</title>
+    <title>Smoothin on Hugo Ivy</title>
     <link>/tags/smoothin/</link>
-    <description>Recent content in Smoothin on A Hugo website</description>
+    <description>Recent content in Smoothin on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Natural cubic spline for Non-parametric regression</title>
-      <link>/2018/02/19/nonparametric-regression/</link>
+      <link>/post/2018/02/19/nonparametric-regression/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/nonparametric-regression/</guid>
+      <guid>/post/2018/02/19/nonparametric-regression/</guid>
       <description>Here is the a new note about the non-parametric regression.
 Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve \(g\) is. An intuitively way is \(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\),the integrated squared second derivative.
 The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&amp;#39;&amp;#39;(x)^2\}dx\] So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.</description>

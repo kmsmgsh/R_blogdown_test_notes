@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nonparametric on A Hugo website</title>
+    <title>Nonparametric on Hugo Ivy</title>
     <link>/tags/nonparametric/</link>
-    <description>Recent content in Nonparametric on A Hugo website</description>
+    <description>Recent content in Nonparametric on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Mar 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/30/regression-and-classification-tree/</link>
+      <link>/post/2018/03/30/regression-and-classification-tree/</link>
       <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/30/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/30/regression-and-classification-tree/</guid>
       <description>Notes for Classification and regression trees(Leo Breima,Jerome H.Friedman, Richard A. Olshen, Charles J.Stone,1984)
 ###Chap1 The back ground.
 1.1 Classifiers as partitions
@@ -25,19 +25,19 @@ The classification problem is with a long history and real world background, suc
     
     <item>
       <title>Regression and classification tree</title>
-      <link>/2018/03/21/regression-and-classification-tree/</link>
+      <link>/post/2018/03/21/regression-and-classification-tree/</link>
       <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/21/regression-and-classification-tree/</guid>
+      <guid>/post/2018/03/21/regression-and-classification-tree/</guid>
       <description>This is just to make the position. The downloaded version of the &amp;ldquo;Classification and Regression Trees&amp;rdquo; is very not clear. So I try to borrow one from university library. Then I will write some notes about this book here. This may not be fulfill very quick, but I hope so. Maybe this will be the first time to use the feature of r markdown, the package &amp;ldquo;rparts&amp;rdquo; description is implementing the algorithms in that book.</description>
     </item>
     
     <item>
       <title>Natural cubic spline for Non-parametric regression</title>
-      <link>/2018/02/19/nonparametric-regression/</link>
+      <link>/post/2018/02/19/nonparametric-regression/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/nonparametric-regression/</guid>
+      <guid>/post/2018/02/19/nonparametric-regression/</guid>
       <description>Here is the a new note about the non-parametric regression.
 Quote from the Green and Silverman(1994),1.2.2, there are many ways to quantify the roughness of a curve, which is means the how ‘rough’ or ‘wiggly’ the curve \(g\) is. An intuitively way is \(\int _a ^b \{g&amp;#39;&amp;#39;(t)\}^2dt\),the integrated squared second derivative.
 The general form of penalized least squares regression \[S(g)=\sum^n_{i=1}\{Y_i-g(t_i)\}^2+a\int^b_a\{g&amp;#39;&amp;#39;(x)^2\}dx\] So the fit is not only concern about the goodness of fit(if so,1-NN is the best method among all methods for the data set), but also consider about the roughness.</description>

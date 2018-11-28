@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test on A Hugo website</title>
+    <title>Test on Hugo Ivy</title>
     <link>/tags/test/</link>
-    <description>Recent content in Test on A Hugo website</description>
+    <description>Recent content in Test on Hugo Ivy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Feb 2018 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Test R markdown function</title>
-      <link>/2018/02/19/test-r-markdown-function/</link>
+      <link>/post/2018/02/19/test-r-markdown-function/</link>
       <pubDate>Mon, 19 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/02/19/test-r-markdown-function/</guid>
+      <guid>/post/2018/02/19/test-r-markdown-function/</guid>
       <description>This is the first page by r markdown, and it is only a simple markdown now.
 1 + 1 # not executed </description>
     </item>
